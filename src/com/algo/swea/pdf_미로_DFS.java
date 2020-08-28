@@ -10,8 +10,8 @@ public class pdf_¹Ì·Î_DFS{
 	static int[] dy = {0,0,1,-1};
 	static int[] dx = {1,-1,0,0};
 	static int min;
-	static int sy,sx;
-	static int gy,gx;
+	static int sy,sx; // start
+	static int gy,gx; // goal
 	static char[][] map;
 	static boolean[][] visit;
 	public static void main(String[] args) throws Exception{
