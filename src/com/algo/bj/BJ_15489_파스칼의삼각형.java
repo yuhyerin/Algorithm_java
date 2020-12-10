@@ -2,14 +2,14 @@ package com.algo.bj;
 
 import java.util.Scanner;
 
-public class BJ_15489_ÆÄ½ºÄ®ÀÇ»ï°¢Çü {
+public class BJ_15489_íŒŒìŠ¤ì¹¼ì˜ì‚¼ê°í˜• {
 	
 	static int R,C,W;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		R = sc.nextInt(); // 3Çà
-		C = sc.nextInt(); // 1¹øÂ° 
-		W = sc.nextInt(); // ÇÑº¯±æÀÌ 4 
+		R = sc.nextInt(); // 3í–‰
+		C = sc.nextInt(); // 1ë²ˆì§¸ 
+		W = sc.nextInt(); // í•œë³€ê¸¸ì´ 4 
 		
 		int N = R+W;
 		int[][] paskal = new int[N][N];

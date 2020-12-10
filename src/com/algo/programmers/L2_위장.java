@@ -3,11 +3,11 @@ package com.algo.programmers;
 import java.util.HashMap;
 import java.util.Map;
 
-public class L2_À§Àå {
+public class L2_ìœ„ì¥ {
 	
 	public static void main(String[] args) {
-		// { ÀÌ¸§, Á¾·ù }   Á¾·ù: headgear(¸Ó¸®), eyewear(´«), face(¾ó±¼), 
-		// ¸Ó¸® - 2, ¾È°æ- 1
+		// { ì´ë¦„, ì¢…ë¥˜ }   ì¢…ë¥˜: headgear(ë¨¸ë¦¬), eyewear(ëˆˆ), face(ì–¼êµ´), 
+		// ë¨¸ë¦¬ - 2, ì•ˆê²½- 1
 // 		String[][] clothes = {
 // 				{"yellow_hat", "headgear"},
 // 				{"blue_hat", "headgear"},
@@ -30,9 +30,9 @@ public class L2_À§Àå {
 		int answer = 1;
 		HashMap<String, Integer> hash = new HashMap<>();
 		for(int i=0; i< clothes.length; i++) {
-			if(hash.containsKey(clothes[i][1])) { // ÀÌ¹Ì ÀÖÀ¸¸é? 
+			if(hash.containsKey(clothes[i][1])) { // ì´ë¯¸ ìˆìœ¼ë©´? 
 				hash.put(clothes[i][1], hash.get(clothes[i][1])+1);
-			}else { // ¾øÀ¸¸é 
+			}else { // ì—†ìœ¼ë©´ 
 				hash.put(clothes[i][1], 1);
 			}
 		}

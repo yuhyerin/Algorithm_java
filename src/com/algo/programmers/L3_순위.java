@@ -2,13 +2,13 @@ package com.algo.programmers;
 
 import java.util.ArrayList;
 
-public class L3_¼øÀ§ {
-	/** n¸íÀÇ ±ÇÅõ¼±¼ö 1~n¹ø 
-	 * A°¡ Bº¸´Ù ½Ç·ÂÀÌ ÁÁÀ¸¸é A´Â B¸¦ Ç×»ó ÀÌ±ä´Ù.
-	 * °æ±â °á°ú°¡ ÁÖ¾îÁü. ¸î¸î °á°ú´Â ºĞ½ÇÇÔ.
-	 * ¼øÀ§¸¦ ¸Å±æ ¼ö ÀÖ´Â ¼±¼öÀÇ ¼ö¸¦ return */
+public class L3_ìˆœìœ„ {
+	/** nëª…ì˜ ê¶Œíˆ¬ì„ ìˆ˜ 1~në²ˆ 
+	 * Aê°€ Bë³´ë‹¤ ì‹¤ë ¥ì´ ì¢‹ìœ¼ë©´ AëŠ” Bë¥¼ í•­ìƒ ì´ê¸´ë‹¤.
+	 * ê²½ê¸° ê²°ê³¼ê°€ ì£¼ì–´ì§. ëª‡ëª‡ ê²°ê³¼ëŠ” ë¶„ì‹¤í•¨.
+	 * ìˆœìœ„ë¥¼ ë§¤ê¸¸ ìˆ˜ ìˆëŠ” ì„ ìˆ˜ì˜ ìˆ˜ë¥¼ return */
 	public static void main(String[] args) {
-		L3_¼øÀ§ t = new L3_¼øÀ§();
+		L3_ìˆœìœ„ t = new L3_ìˆœìœ„();
 		int n = 5;
 		int[][] results = {{4, 3}, {4, 2}, {3, 2}, {1, 2}, {2, 5}};
 		int result = t.solution(n, results);

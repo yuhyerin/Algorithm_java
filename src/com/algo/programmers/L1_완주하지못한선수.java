@@ -2,7 +2,7 @@ package com.algo.programmers;
 
 import java.util.HashMap;
 
-public class L1_¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö {
+public class L1_ì™„ì£¼í•˜ì§€ëª»í•œì„ ìˆ˜ {
 	
 	public static void main(String[] args) {
 //		String[] participant = {"leo","kiki","eden"};
@@ -18,15 +18,15 @@ public class L1_¿ÏÁÖÇÏÁö¸øÇÑ¼±¼ö {
 		boolean flag = false;
 		HashMap<String, Integer> hash = new HashMap<>();
 		for(int i=0; i<comp.length;i++) {
-			if(!hash.containsKey(comp[i])) { //¾øÀ¸¸é 
+			if(!hash.containsKey(comp[i])) { //ì—†ìœ¼ë©´ 
 				hash.put(comp[i], 1);
-			}else { //ÀÌ¹Ì ÀÖÀ¸¸é 
+			}else { //ì´ë¯¸ ìˆìœ¼ë©´ 
 				hash.put(comp[i],  hash.get(comp[i])+1);
 			}
 		}// end make hash
 		
 		for(int i=0; i<part.length;i++) {
-			if(hash.containsKey(part[i])) { // Âü°¡ÀÚ°¡ ¿ÏÁÖhash¿¡ µî·ÏµÇ¾î ÀÖ´Ï? 
+			if(hash.containsKey(part[i])) { // ì°¸ê°€ìê°€ ì™„ì£¼hashì— ë“±ë¡ë˜ì–´ ìˆë‹ˆ? 
 				hash.put(part[i],  hash.get(part[i])-1);
 				if(hash.get(part[i])==0) {
 					hash.remove(part[i]);

@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class BJ_1620_Æ÷ÄÏ¸ó¸¶½ºÅÍ {
+public class BJ_1620_í¬ì¼“ëª¬ë§ˆìŠ¤í„° {
 	
-	static int N; // Æ÷ÄÏ¸ó ¼ö 
-	static int M; // ¹®Á¦ÀÇ ¼ö 
+	static int N; // í¬ì¼“ëª¬ ìˆ˜ 
+	static int M; // ë¬¸ì œì˜ ìˆ˜ 
 	public static void main(String[] args) throws Exception{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(in.readLine());
@@ -17,14 +17,14 @@ public class BJ_1620_Æ÷ÄÏ¸ó¸¶½ºÅÍ {
 		M = Integer.parseInt(st.nextToken()); //5
 		String[] names = new String[N+1];
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		// Æ÷ÄÏ¸ó ÀÌ¸§Àº Ã¹±ÛÀÚ ´ë¹®ÀÚ, ³ª¸ÓÁö ¼Ò¹®ÀÚ, ÃÖ´ë±æÀÌ 20
+		// í¬ì¼“ëª¬ ì´ë¦„ì€ ì²«ê¸€ì ëŒ€ë¬¸ì, ë‚˜ë¨¸ì§€ ì†Œë¬¸ì, ìµœëŒ€ê¸¸ì´ 20
 		for(int i=1; i<=N; i++) {
 //			names[i]=in.readLine();
 			String nm = in.readLine();
 			names[i]=nm;
 			map.put(nm, i);
 		}
-		// ¹®Á¦ 
+		// ë¬¸ì œ 
 		String[] ques = new String[M+1];
 		for(int i=1; i<=M; i++) {
 			ques[i]=in.readLine();

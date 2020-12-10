@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BJ_4179_ºÒ {
+public class BJ_4179_ë¶ˆ {
 
 	static int R, C;
 	static char[][] map;

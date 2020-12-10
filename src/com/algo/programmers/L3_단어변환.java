@@ -3,19 +3,19 @@ package com.algo.programmers;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class L3_´Ü¾îº¯È¯ {
-	/** 2°³ÀÇ ´Ü¾î begin, target
-	 * ´Ü¾îÁıÇÕ words
-	 * ±ÔÄ¢À» ÀÌ¿ëÇÏ¿© begin -> targetÀ¸·Î º¯È¯ÇÏ´Â °¡Àå ÂªÀº °úÁ¤À» Ã£±â 
-	 * ±ÔÄ¢1. ÇÑ¹ø¿¡ ÇÑ°³ÀÇ ¾ËÆÄºª¸¸ ¹Ù²Ü ¼ö ÀÖ´Ù.
-	 * ±ÔÄ¢2. words¿¡ ÀÖ´Â ´Ü¾î·Î¸¸ º¯È¯ÇÒ ¼ö ÀÖ´Ù. 
-	 * hit -> hot -> dot -> dog -> cog : 4´Ü°è 
+public class L3_ë‹¨ì–´ë³€í™˜ {
+	/** 2ê°œì˜ ë‹¨ì–´ begin, target
+	 * ë‹¨ì–´ì§‘í•© words
+	 * ê·œì¹™ì„ ì´ìš©í•˜ì—¬ begin -> targetìœ¼ë¡œ ë³€í™˜í•˜ëŠ” ê°€ì¥ ì§§ì€ ê³¼ì •ì„ ì°¾ê¸° 
+	 * ê·œì¹™1. í•œë²ˆì— í•œê°œì˜ ì•ŒíŒŒë²³ë§Œ ë°”ê¿€ ìˆ˜ ìˆë‹¤.
+	 * ê·œì¹™2. wordsì— ìˆëŠ” ë‹¨ì–´ë¡œë§Œ ë³€í™˜í•  ìˆ˜ ìˆë‹¤. 
+	 * hit -> hot -> dot -> dog -> cog : 4ë‹¨ê³„ 
 	 * 
-	 * ´Ü¾î´Â ¼Ò¹®ÀÚ¸¸. (26°³) 
-	 * ´Ü¾îÀÇ ±æÀÌ´Â 3~10. ¸ğµç ´Ü¾îÀÇ ±æÀÌ´Â °°´Ù!
-	 * words¿¡´Â 3°³~50°³. Áßº¹X
-	 * begin°ú targetÀº °°Áö ¾ÊÀ½.
-	 * º¯È¯ÇÒ ¼ö ¾ø´Ù¸é 0 ¸®ÅÏ. */
+	 * ë‹¨ì–´ëŠ” ì†Œë¬¸ìë§Œ. (26ê°œ) 
+	 * ë‹¨ì–´ì˜ ê¸¸ì´ëŠ” 3~10. ëª¨ë“  ë‹¨ì–´ì˜ ê¸¸ì´ëŠ” ê°™ë‹¤!
+	 * wordsì—ëŠ” 3ê°œ~50ê°œ. ì¤‘ë³µX
+	 * beginê³¼ targetì€ ê°™ì§€ ì•ŠìŒ.
+	 * ë³€í™˜í•  ìˆ˜ ì—†ë‹¤ë©´ 0 ë¦¬í„´. */
 	public static void main(String[] args) {
 		String begin = "hit";
 		String target = "cog" ;
@@ -43,24 +43,24 @@ public class L3_´Ü¾îº¯È¯ {
         outer:while(flag) {
         	
         	int size = beginque.size();
-        	System.out.println("beginÅ¥ size: "+size);
-        	while(size-- > 0) {// ÃÊ±â beginque»çÀÌÁî¸¸Å­¸¸ ¹İº¹. 
+        	System.out.println("beginí size: "+size);
+        	while(size-- > 0) {// ì´ˆê¸° beginqueì‚¬ì´ì¦ˆë§Œí¼ë§Œ ë°˜ë³µ. 
         		
         		Queue<String> wordque = new LinkedList<>();
         		String cur = beginque.poll(); // hit 
-        		if(cur.equals(target)) { // Å¸°ÙÀ» ¹ß°ßÇßÀ¸¸é Á¾·á.
-        			System.out.println(target+"À» ¹ß°ßÇÔ");
+        		if(cur.equals(target)) { // íƒ€ê²Ÿì„ ë°œê²¬í–ˆìœ¼ë©´ ì¢…ë£Œ.
+        			System.out.println(target+"ì„ ë°œê²¬í•¨");
         			if(min>answer) {
         				min = answer;
         			}
         			break outer;
         		}
         		wordque = makeAllword(cur, words); // hot
-        		if(wordque.size()==0) { // ¾ËÆÄºª ÇÏ³ª¸¸ ¹Ù²Û´Ü¾î°¡ words¿¡ ÀÏÄ¡ÇÑ´Â ¾Ö°¡ ¾øÀ¸¸é Á¾·á.
+        		if(wordque.size()==0) { // ì•ŒíŒŒë²³ í•˜ë‚˜ë§Œ ë°”ê¾¼ë‹¨ì–´ê°€ wordsì— ì¼ì¹˜í•œëŠ” ì• ê°€ ì—†ìœ¼ë©´ ì¢…ë£Œ.
         			break outer;
         		}
         		while(!wordque.isEmpty()) {
-        			beginque.add(wordque.poll()); // Ã£¾Æ¿Â ¾ÖµéÀ» beginÅ¥¿¡ ³Ö±â.
+        			beginque.add(wordque.poll()); // ì°¾ì•„ì˜¨ ì• ë“¤ì„ beginíì— ë„£ê¸°.
         		}
         	}// end while(beginque size)
         	

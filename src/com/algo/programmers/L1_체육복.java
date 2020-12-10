@@ -1,13 +1,13 @@
 package com.algo.programmers;
 
-public class L1_Ã¼À°º¹ {
+public class L1_ì²´ìœ¡ë³µ {
 /**
- * ÇĞ»ı¹øÈ£ : Ã¼°İ¼ø 
- * ÀüÃ¼ ÇĞ»ı : n
- * µµ³­´çÇÑ ÇĞ»ı¹øÈ£´ã±ä ¹è¿­: lost
- * ¿©·¯¹ú ÀÖ´Â ÇĞ»ı¹øÈ£´ã±ä ¹è¿­ : reserve 
- * ¾Õ,µÚ ¹øÈ£¸¸ ºô·ÁÁÙ ¼ö ÀÖ´Ù.
- * ¼ö¾÷µéÀ» ¼ö ÀÖ´Â ÃÖ´ëÇĞ»ı¼ö ¸®ÅÏ 
+ * í•™ìƒë²ˆí˜¸ : ì²´ê²©ìˆœ 
+ * ì „ì²´ í•™ìƒ : n
+ * ë„ë‚œë‹¹í•œ í•™ìƒë²ˆí˜¸ë‹´ê¸´ ë°°ì—´: lost
+ * ì—¬ëŸ¬ë²Œ ìˆëŠ” í•™ìƒë²ˆí˜¸ë‹´ê¸´ ë°°ì—´ : reserve 
+ * ì•,ë’¤ ë²ˆí˜¸ë§Œ ë¹Œë ¤ì¤„ ìˆ˜ ìˆë‹¤.
+ * ìˆ˜ì—…ë“¤ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€í•™ìƒìˆ˜ ë¦¬í„´ 
  * */
 	
 	public static void main(String[] args) {
@@ -20,10 +20,10 @@ public class L1_Ã¼À°º¹ {
 	
 	public static int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
-        answer = n - lost.length; // ±âº»Âü¿© °¡´É ÇĞ»ı ¼ö
+        answer = n - lost.length; // ê¸°ë³¸ì°¸ì—¬ ê°€ëŠ¥ í•™ìƒ ìˆ˜
         
         for(int i=0; i<lost.length; i++) {
-        	if(lost[i]!=0 && lost[i]-1 > 0) { //³» ¾Õ¿¡ ºô·ÁÁÙ ¾Ö ÀÖ´Ï? 
+        	if(lost[i]!=0 && lost[i]-1 > 0) { //ë‚´ ì•ì— ë¹Œë ¤ì¤„ ì•  ìˆë‹ˆ? 
         		for(int j=0; j<reserve.length; j++) {
         			if(lost[i]-1 == reserve[j]) {
         				answer++;
@@ -33,7 +33,7 @@ public class L1_Ã¼À°º¹ {
         			}
         		}
         	}
-        	if(lost[i]!=0 && lost[i]+1 <= n) { //³» µÚ¿¡ ºô·ÁÁÙ ¾Ö ÀÖ´Ï? 
+        	if(lost[i]!=0 && lost[i]+1 <= n) { //ë‚´ ë’¤ì— ë¹Œë ¤ì¤„ ì•  ìˆë‹ˆ? 
         		for(int j=0; j<reserve.length; j++) {
         			if(lost[i]+1 == reserve[j]) {
         				answer++;

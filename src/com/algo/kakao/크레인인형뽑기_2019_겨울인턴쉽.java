@@ -2,11 +2,11 @@ package com.algo.kakao;
 
 import java.util.Stack;
 
-public class Å©·¹ÀÎÀÎÇü»Ì±â_2019_°Ü¿ïÀÎÅÏ½± {
+public class í¬ë ˆì¸ì¸í˜•ë½‘ê¸°_2019_ê²¨ìš¸ì¸í„´ì‰½ {
 	
 	public static void main(String[] args) {
 		
-		Å©·¹ÀÎÀÎÇü»Ì±â_2019_°Ü¿ïÀÎÅÏ½±  t = new Å©·¹ÀÎÀÎÇü»Ì±â_2019_°Ü¿ïÀÎÅÏ½±();
+		í¬ë ˆì¸ì¸í˜•ë½‘ê¸°_2019_ê²¨ìš¸ì¸í„´ì‰½  t = new í¬ë ˆì¸ì¸í˜•ë½‘ê¸°_2019_ê²¨ìš¸ì¸í„´ì‰½();
 		int[][] board = {{0,0,0,0,0},
 						{0,0,1,0,3},
 						{0,2,5,0,1},
@@ -16,10 +16,10 @@ public class Å©·¹ÀÎÀÎÇü»Ì±â_2019_°Ü¿ïÀÎÅÏ½± {
 		int result = t.solution(board, moves);
 		System.out.println(result);
 	}
-	// ÅÍ¶ß·Á »ç¶óÁø ÀÎÇüÀÇ °¹¼ö¸¦ ¸®ÅÏ 
-	// board Å©±â 5~30
-	// 0 Àº ºóÄ­, ¼ıÀÚ´Â °¢±â ´Ù¸¥ ÀÎÇüÀÇ ¸ğ¾çÀ» ÀÇ¹Ì ( 1~100 )
-	// moves Å©±â 1~1000
+	// í„°ëœ¨ë ¤ ì‚¬ë¼ì§„ ì¸í˜•ì˜ ê°¯ìˆ˜ë¥¼ ë¦¬í„´ 
+	// board í¬ê¸° 5~30
+	// 0 ì€ ë¹ˆì¹¸, ìˆ«ìëŠ” ê°ê¸° ë‹¤ë¥¸ ì¸í˜•ì˜ ëª¨ì–‘ì„ ì˜ë¯¸ ( 1~100 )
+	// moves í¬ê¸° 1~1000
 	public int solution(int[][] board, int[] moves) {
         int answer = 0;
         int len = board.length;
@@ -27,15 +27,15 @@ public class Å©·¹ÀÎÀÎÇü»Ì±â_2019_°Ü¿ïÀÎÅÏ½± {
         for(int m=0; m<moves.length; m++) {
         	int cur = moves[m]-1;
         	for(int i=0; i<len; i++) {
-        		if(board[i][cur] !=0) { // Á¦ÀÏ À§¿¡ÀÖ´Â ÀÎÇüÀ» ¸¸³ª¸é 
-        			if(!basket.isEmpty() && basket.peek() == board[i][cur]) {// ½ºÅÃÀÇ Á¦ÀÏÀ§¿¡ ¾Ö¿Í ºñ±³ÇØ¼­ °°À¸¸é 
+        		if(board[i][cur] !=0) { // ì œì¼ ìœ„ì—ìˆëŠ” ì¸í˜•ì„ ë§Œë‚˜ë©´ 
+        			if(!basket.isEmpty() && basket.peek() == board[i][cur]) {// ìŠ¤íƒì˜ ì œì¼ìœ„ì— ì• ì™€ ë¹„êµí•´ì„œ ê°™ìœ¼ë©´ 
         				answer+=2;
-        				basket.pop(); //¹Ù±¸´Ï¿¡¼­ Á¦°Å 
-        				board[i][cur]=0; // board¿¡¼­µµ Á¦°Å
+        				basket.pop(); //ë°”êµ¬ë‹ˆì—ì„œ ì œê±° 
+        				board[i][cur]=0; // boardì—ì„œë„ ì œê±°
         				break;
         			}else{
-        				basket.push(board[i][cur]); // ¹Ù±¸´Ï¿¡ ³Ö±â
-        				board[i][cur]=0; // board¿¡¼­ Á¦°Å 
+        				basket.push(board[i][cur]); // ë°”êµ¬ë‹ˆì— ë„£ê¸°
+        				board[i][cur]=0; // boardì—ì„œ ì œê±° 
         				break;
         			}
         		}// end if

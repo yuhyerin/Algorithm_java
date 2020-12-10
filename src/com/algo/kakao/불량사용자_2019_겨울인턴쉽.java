@@ -3,10 +3,10 @@ package com.algo.kakao;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± {
+public class ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½ {
 
 	public static void main(String[] args) {
-		ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± t = new ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±();
+		ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½ t = new ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½();
 //		String[] user_id = {"frodo", "fradi", "crodo", "abc123", "frodoc"};
 //		String[] banned_id = {"fr*d*", "abc1**"};
 		String[] user_id = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
@@ -14,21 +14,21 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± {
 		int result = t.solution(user_id, banned_id);
 		System.out.println(result);
 	}
-	// ¸î°¡ÁöÀÇ °æ¿ìÀÇ ¼ö°¡ °¡´ÉÇÑÁö return
-	// user_id ¹è¿­Å©±â 1~8
-	// user_id °¢ ¿ø¼ÒµéÀÇ °ªÀº ±æÀÌ°¡ 1~8, ¾ËÆÄºª¼Ò¹®ÀÚ, ¼ıÀÚ·Î¸¸ ÀÌ·ç¾îÁü
-	// ¾ÆÀÌµğµéÀº ¼­·Î Áßº¹ X
-	// banned_id ¹è¿­Å©±â´Â 1~user_idÅ©±â
-	// ºÒ·®»ç¿ëÀÚ ¾ÆÀÌµğ´Â *¹®ÀÚ¸¦ ÇÏ³ªÀÌ»ó Æ÷ÇÔÇÏ°í ÀÖ´Ù.
+	// ëª‡ê°€ì§€ì˜ ê²½ìš°ì˜ ìˆ˜ê°€ ê°€ëŠ¥í•œì§€ return
+	// user_id ë°°ì—´í¬ê¸° 1~8
+	// user_id ê° ì›ì†Œë“¤ì˜ ê°’ì€ ê¸¸ì´ê°€ 1~8, ì•ŒíŒŒë²³ì†Œë¬¸ì, ìˆ«ìë¡œë§Œ ì´ë£¨ì–´ì§
+	// ì•„ì´ë””ë“¤ì€ ì„œë¡œ ì¤‘ë³µ X
+	// banned_id ë°°ì—´í¬ê¸°ëŠ” 1~user_idí¬ê¸°
+	// ë¶ˆëŸ‰ì‚¬ìš©ì ì•„ì´ë””ëŠ” *ë¬¸ìë¥¼ í•˜ë‚˜ì´ìƒ í¬í•¨í•˜ê³  ìˆë‹¤.
 
 	public int solution(String[] user_id, String[] banned_id) {
 		int answer = 0;
-		int userlen = user_id.length; // ÀÀ¸ğÀÚ ¾ÆÀÌµğ ¼ö
-		int banlen = banned_id.length; // Á¦Àç ¾ÆÀÌµğ ¼ö 
-		int[] parents = new int[banlen]; // Á¦Àç ¾Æµğµğ ÆĞÅÏÀÌ °°Àº¾ÆÀÌµğ³¢¸® Ç¥½ÃÇÏ±â À§ÇÑ ¹è¿­
-		int[] count = new int[banlen]; // ÆĞÅÏÀÌ °°Àº°Ô ¸î°³¾¿ ÀÖ´ÂÁö Ä«¿îÆÃÇÏ±â À§ÇÑ ¹è¿­
+		int userlen = user_id.length; // ì‘ëª¨ì ì•„ì´ë”” ìˆ˜
+		int banlen = banned_id.length; // ì œì¬ ì•„ì´ë”” ìˆ˜ 
+		int[] parents = new int[banlen]; // ì œì¬ ì•„ë””ë”” íŒ¨í„´ì´ ê°™ì€ì•„ì´ë””ë¼ë¦¬ í‘œì‹œí•˜ê¸° ìœ„í•œ ë°°ì—´
+		int[] count = new int[banlen]; // íŒ¨í„´ì´ ê°™ì€ê²Œ ëª‡ê°œì”© ìˆëŠ”ì§€ ì¹´ìš´íŒ…í•˜ê¸° ìœ„í•œ ë°°ì—´
 		
-		for(int i=0; i<banlen; i++) { // parents ÀÚ±âÀÚ½ÅÀ¸·Î ÃÊ±âÈ­ 
+		for(int i=0; i<banlen; i++) { // parents ìê¸°ìì‹ ìœ¼ë¡œ ì´ˆê¸°í™” 
 			parents[i]=i;
 		}
 		
@@ -38,7 +38,7 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± {
 				String next = banned_id[j];
 				if (prev.length() != next.length()) {
 					continue;
-				} else {// ±æÀÌ °°À¸¸é
+				} else {// ê¸¸ì´ ê°™ìœ¼ë©´
 					boolean flag = true;
 					for (int p = 0; p < prev.length(); p++) {
 						if (prev.charAt(p) == '*' || next.charAt(p) == '*') {
@@ -57,13 +57,13 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± {
 		
 		ArrayList<String>[] list = new ArrayList[banlen];
 		for (int i = 0; i < banlen; i++) {
-			String ban_id = banned_id[i]; // Á¦Àç ¾ÆÀÌµğ¿¡¼­ ÇÏ³ª ²¨³»¼­ 
+			String ban_id = banned_id[i]; // ì œì¬ ì•„ì´ë””ì—ì„œ í•˜ë‚˜ êº¼ë‚´ì„œ 
 			ArrayList<String> tmp = new ArrayList<>();
-			for (int j = 0; j < userlen; j++) { // ¸ğµç ÀÀ¸ğÀÚµéÀ» ÇÏ³ª¾¿ ºñ±³ 
+			for (int j = 0; j < userlen; j++) { // ëª¨ë“  ì‘ëª¨ìë“¤ì„ í•˜ë‚˜ì”© ë¹„êµ 
 				String user = user_id[j];
 				if (ban_id.length() != user.length()) {
 					continue;
-				} else {// ±æÀÌ°¡ °°À»¶§
+				} else {// ê¸¸ì´ê°€ ê°™ì„ë•Œ
 					boolean flag = true;
 					for (int k = 0; k < ban_id.length(); k++) {
 						if (ban_id.charAt(k) == '*' || user.charAt(k) == '*') {
@@ -78,12 +78,12 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½± {
 					}
 				}
 			} // end for
-			list[i] = tmp; // Á¦Àç ¾ÆÀÌµğ¿¡ ´ëÇØ ÇØ´çÇÏ´Â À¯Àú¸¦ ³ÖÀº tmp¸¦ list[i]¿¡ ³Ö±â.
+			list[i] = tmp; // ì œì¬ ì•„ì´ë””ì— ëŒ€í•´ í•´ë‹¹í•˜ëŠ” ìœ ì €ë¥¼ ë„£ì€ tmpë¥¼ list[i]ì— ë„£ê¸°.
 		} // end for
 
 		
-		HashSet<String>[] setlist = new HashSet[banlen]; // Áßº¹Á¦°Å¸¦ À§ÇÑ set 
-		for(int i=0; i<banlen; i++) { //ÃÊ±âÈ­
+		HashSet<String>[] setlist = new HashSet[banlen]; // ì¤‘ë³µì œê±°ë¥¼ ìœ„í•œ set 
+		for(int i=0; i<banlen; i++) { //ì´ˆê¸°í™”
 			setlist[i] = new HashSet<>();
 		}
 		for(int i=0; i<banlen; i++) {

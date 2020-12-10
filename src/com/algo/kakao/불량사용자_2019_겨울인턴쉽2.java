@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 {
+public class ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½2 {
 
 	public static void main(String[] args) {
-		ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 t = new ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2();
+		ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½2 t = new ë¶ˆëŸ‰ì‚¬ìš©ì_2019_ê²¨ìš¸ì¸í„´ì‰½2();
 //		String[] user_id = {"frodo", "fradi", "crodo", "abc123", "frodoc"};
 //		String[] banned_id = {"fr*d*", "abc1**"};
 		String[] user_id = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
@@ -15,12 +15,12 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 {
 		int result = t.solution(user_id, banned_id);
 		System.out.println(result);
 	}
-	// ¸î°¡ÁöÀÇ °æ¿ìÀÇ ¼ö°¡ °¡´ÉÇÑÁö return
-	// user_id ¹è¿­Å©±â 1~8
-	// user_id °¢ ¿ø¼ÒµéÀÇ °ªÀº ±æÀÌ°¡ 1~8, ¾ËÆÄºª¼Ò¹®ÀÚ, ¼ıÀÚ·Î¸¸ ÀÌ·ç¾îÁü
-	// ¾ÆÀÌµğµéÀº ¼­·Î Áßº¹ X
-	// banned_id ¹è¿­Å©±â´Â 1~user_idÅ©±â
-	// ºÒ·®»ç¿ëÀÚ ¾ÆÀÌµğ´Â *¹®ÀÚ¸¦ ÇÏ³ªÀÌ»ó Æ÷ÇÔÇÏ°í ÀÖ´Ù.
+	// ëª‡ê°€ì§€ì˜ ê²½ìš°ì˜ ìˆ˜ê°€ ê°€ëŠ¥í•œì§€ return
+	// user_id ë°°ì—´í¬ê¸° 1~8
+	// user_id ê° ì›ì†Œë“¤ì˜ ê°’ì€ ê¸¸ì´ê°€ 1~8, ì•ŒíŒŒë²³ì†Œë¬¸ì, ìˆ«ìë¡œë§Œ ì´ë£¨ì–´ì§
+	// ì•„ì´ë””ë“¤ì€ ì„œë¡œ ì¤‘ë³µ X
+	// banned_id ë°°ì—´í¬ê¸°ëŠ” 1~user_idí¬ê¸°
+	// ë¶ˆëŸ‰ì‚¬ìš©ì ì•„ì´ë””ëŠ” *ë¬¸ìë¥¼ í•˜ë‚˜ì´ìƒ í¬í•¨í•˜ê³  ìˆë‹¤.
 	
 	static int N;
 	static int R;
@@ -29,10 +29,10 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 {
 	
 	public int solution(String[] user_id, String[] banned_id) {
 		int answer = 0;
-		N = user_id.length; // ÀÀ¸ğÀÚ ¾ÆÀÌµğ ¼ö 
+		N = user_id.length; // ì‘ëª¨ì ì•„ì´ë”” ìˆ˜ 
 		hashSet = new HashSet<>();
 		checked = new boolean[N];
-		R = banned_id.length; // Á¦Àç ¾ÆÀÌµğ ¼ö 
+		R = banned_id.length; // ì œì¬ ì•„ì´ë”” ìˆ˜ 
 		LinkedList<String> path = new LinkedList<>();
 		doProcess(user_id, banned_id, R, path);
 		answer = hashSet.size();
@@ -42,25 +42,25 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 {
 	
 	private void doProcess(String[] user_id, String[] banned_id, int r, LinkedList<String> path) {
 		
-		if(r==0) { // Á¦Àç¾ÆÀÌµğ °¹¼ö¸¸Å­ ÀÀ¸ğ¾ÆÀÌµğ¸¦ ¼±ÅÃÇßÀ¸¸é, 
-			 // »ÌÀº ÀÀ¸ğ¾ÆÀÌµğ°¡ Á¦Àç¾ÆÀÌµğ¿Í °°ÀºÁö ºñ±³ÇÑ´Ù.
+		if(r==0) { // ì œì¬ì•„ì´ë”” ê°¯ìˆ˜ë§Œí¼ ì‘ëª¨ì•„ì´ë””ë¥¼ ì„ íƒí–ˆìœ¼ë©´, 
+			 // ë½‘ì€ ì‘ëª¨ì•„ì´ë””ê°€ ì œì¬ì•„ì´ë””ì™€ ê°™ì€ì§€ ë¹„êµí•œë‹¤.
 			if(isCorrect(user_id, banned_id, path)) {
 				LinkedList<String> tmp = new LinkedList<>();
 				for(int i=0; i<path.size(); i++) {
 					tmp.add(path.get(i));
 				}
-				Collections.sort(tmp); // Áßº¹Á¦°Å¸¦ À§ÇØ Á¤·ÄÇÏ°í ³Ö¾îÁØ´Ù.
+				Collections.sort(tmp); // ì¤‘ë³µì œê±°ë¥¼ ìœ„í•´ ì •ë ¬í•˜ê³  ë„£ì–´ì¤€ë‹¤.
 				hashSet.add(tmp);
 			}
 			return;
 		}
 		
 		for(int i=0; i<N; i++) {
-			if(!checked[i]) { // i¹øÂ° ÀÀ¸ğ¾ÆÀÌµğ ¹æ¹®ÇÏÁö ¾Ê¾ÒÀ¸¸é 
-				checked[i] = true; // ¹æ¹®Ã¼Å©
-				path.add(user_id[i]); // LinkedList¿¡ ³Ö±â.
+			if(!checked[i]) { // ië²ˆì§¸ ì‘ëª¨ì•„ì´ë”” ë°©ë¬¸í•˜ì§€ ì•Šì•˜ìœ¼ë©´ 
+				checked[i] = true; // ë°©ë¬¸ì²´í¬
+				path.add(user_id[i]); // LinkedListì— ë„£ê¸°.
 				doProcess(user_id, banned_id, r-1, path);
-				path.removeLast(); // ¹æ±İ ³ÖÀº°Å »©±â. 
+				path.removeLast(); // ë°©ê¸ˆ ë„£ì€ê±° ë¹¼ê¸°. 
 				checked[i]= false;
 			}
 		}
@@ -73,18 +73,18 @@ public class ºÒ·®»ç¿ëÀÚ_2019_°Ü¿ïÀÎÅÏ½±2 {
 			String userId = path.get(i);
 			String bannedId = banned_id[i];
 			
-			// ±ÛÀÚ¼ö°¡ ´Ù¸£¸é false
+			// ê¸€ììˆ˜ê°€ ë‹¤ë¥´ë©´ false
 			if(userId.length() != bannedId.length()) {
 				return false;
-			}else { // ±ÛÀÚ¼ö °°À¸¸é ºñ±³ ½ÃÀÛ 
-				for(int s=0; s< userId.length(); s++) { // ÇÑ±ÛÀÚ¾¿ ºñ±³ÇÏ¸é¼­ *¸¸³ª¸é °è¼Ó ÁøÇà 
+			}else { // ê¸€ììˆ˜ ê°™ìœ¼ë©´ ë¹„êµ ì‹œì‘ 
+				for(int s=0; s< userId.length(); s++) { // í•œê¸€ìì”© ë¹„êµí•˜ë©´ì„œ *ë§Œë‚˜ë©´ ê³„ì† ì§„í–‰ 
 					String word_user = userId.substring(s,s+1);
 					String word_banned = bannedId.substring(s, s+1);
 					
-					// Á¦Àç±ÛÀÚ°¡ *ÀÌ¶ó¸é continue
+					// ì œì¬ê¸€ìê°€ *ì´ë¼ë©´ continue
 					if(word_banned.equals("*")) continue;
 					
-					// ¼­·Î ±ÛÀÚ°¡ ´Ù¸£¸é false
+					// ì„œë¡œ ê¸€ìê°€ ë‹¤ë¥´ë©´ false
 					if(!word_user.equals(word_banned)) {
 						return false;
 					}

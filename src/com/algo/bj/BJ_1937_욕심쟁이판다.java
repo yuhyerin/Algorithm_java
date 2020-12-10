@@ -3,7 +3,7 @@ package com.algo.bj;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù {
+public class BJ_1937_ìš•ì‹¬ìŸì´íŒë‹¤ {
     public static void main(String[] args) {
         String[][] board = { { "A", "B", "T", "T", "T" },
                 { "T", "C", "D", "E", "T" },
@@ -11,19 +11,19 @@ public class BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù {
                 { "B", "A", "H", "G", "F" },
                 {"C","D","E","F","G"}};
 
-        BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù t = new BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù();
+        BJ_1937_ìš•ì‹¬ìŸì´íŒë‹¤ t = new BJ_1937_ìš•ì‹¬ìŸì´íŒë‹¤();
         int result = t.solution(board);
-        System.out.println("Á¤´ä: " + result);
-        // Ã³À½¿¡ ¾Æ¹«Ä­¿¡¼­³ª ½ÃÀÛ °¡´É.
-        // »ó,ÇÏ,ÁÂ,¿ì ÇÑÄ­¾¿ ÀÌµ¿.
-        // ÇÑ¹ø ¹æ¹®ÇÑ °÷ ¹æ¹®X
-        // »çÀü¼øÀ¸·Î µÚ¿¡ÀÖ´Â ¾ËÆÄºªÀÏ¶§¸¸ ÀÌµ¿°¡´É
-        // µü ÇÑ¹ø¸¸, »çÀü¼ø ¾Õ¿¡¿À´Â Ä­À¸·Î ÀÌµ¿ÇÒ ¼ö ÀÖÀ½
-        // ÃÖ´ë°ª ±¸ÇÏ±â.
+        System.out.println("ì •ë‹µ: " + result);
+        // ì²˜ìŒì— ì•„ë¬´ì¹¸ì—ì„œë‚˜ ì‹œì‘ ê°€ëŠ¥.
+        // ìƒ,í•˜,ì¢Œ,ìš° í•œì¹¸ì”© ì´ë™.
+        // í•œë²ˆ ë°©ë¬¸í•œ ê³³ ë°©ë¬¸X
+        // ì‚¬ì „ìˆœìœ¼ë¡œ ë’¤ì—ìˆëŠ” ì•ŒíŒŒë²³ì¼ë•Œë§Œ ì´ë™ê°€ëŠ¥
+        // ë”± í•œë²ˆë§Œ, ì‚¬ì „ìˆœ ì•ì—ì˜¤ëŠ” ì¹¸ìœ¼ë¡œ ì´ë™í•  ìˆ˜ ìˆìŒ
+        // ìµœëŒ€ê°’ êµ¬í•˜ê¸°.
 
     }
 
-    static int[] dy = {-1,1,0,0}; // »ó,ÇÏ,ÁÂ,¿ì
+    static int[] dy = {-1,1,0,0}; // ìƒ,í•˜,ì¢Œ,ìš°
     static int[] dx = {0,0,-1,1};
     static boolean[][] visit;
     static int max = 0;
@@ -41,7 +41,7 @@ public class BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù {
     }
 
     private void dfs(String[][] board, int y, int x, boolean chance, int cnt) {
-        visit[y][x]=true; // ÇöÀç ¾ËÆÄºª ¹æ¹®
+        visit[y][x]=true; // í˜„ì¬ ì•ŒíŒŒë²³ ë°©ë¬¸
         max = max < cnt ? cnt : max;
         for(int d=0; d<4;d++) {
             int ny = y+dy[d];
@@ -62,7 +62,7 @@ public class BJ_1937_¿å½ÉÀïÀÌÆÇ´Ù {
                 }
             }
         }
-        // ¹æ¹®¾ÈÇÑ°É·Î µÇµ¹¸®±â
+        // ë°©ë¬¸ì•ˆí•œê±¸ë¡œ ë˜ëŒë¦¬ê¸°
         visit[y][x]=false;
     }
 

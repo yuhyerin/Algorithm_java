@@ -7,9 +7,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class BJ_1339_´Ü¾î¼öÇĞ {
-	// ¾ËÆÄºªÀ» 0~9¼ıÀÚ ÇÏ³ª·Î ¹Ù²ÙÀÚ.
-	// ¼öÀÇ ÇÕÀÌ ÃÖ´ë°¡ µÇ¾ßÇÔ. 
+public class BJ_1339_ë‹¨ì–´ìˆ˜í•™ {
+	// ì•ŒíŒŒë²³ì„ 0~9ìˆ«ì í•˜ë‚˜ë¡œ ë°”ê¾¸ì.
+	// ìˆ˜ì˜ í•©ì´ ìµœëŒ€ê°€ ë˜ì•¼í•¨. 
 	static int N;
 	public static void main(String[] args) throws Exception{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +19,7 @@ public class BJ_1339_´Ü¾î¼öÇĞ {
 		char[][] array = new char[N][8];
 		for(int i=0; i<N; i++) {
 			Arrays.fill(array[i], '.');
-		}//end ÃÊ±âÈ­
+		}//end ì´ˆê¸°í™”
 		
 		TreeMap<Integer, String> map = new TreeMap<Integer, String>(); 
 		for(int i=0; i<N; i++) {
@@ -35,7 +35,7 @@ public class BJ_1339_´Ü¾î¼öÇĞ {
 			String word = map.get(reverseIter.next());
 			System.out.println(word);
 			int wordlen = word.length();
-			System.out.println("¹®ÀÚ¿­ ±æÀÌ: "+wordlen);
+			System.out.println("ë¬¸ìì—´ ê¸¸ì´: "+wordlen);
 			int col = 7;
 			for(int i=wordlen-1; i>=0; i--) {
 				array[row][col] = word.charAt(i);

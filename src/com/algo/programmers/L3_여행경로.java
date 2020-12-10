@@ -3,23 +3,23 @@ package com.algo.programmers;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class L3_¿©Çà°æ·Î {
+public class L3_ì—¬í–‰ê²½ë¡œ {
 
-	/** Ç×°ø±ÇÀ» ¸ğµÎ ÀÌ¿ëÇØ¼­ ¿©Çà°æ·Î Â¥±â 
-	 * ICN °øÇ×¿¡¼­ Ãâ¹ß.
-	 * Ç×°ø±Ç Á¤º¸ tickets 2Â÷¿ø ¹è¿­
-	 * ¹æ¹®ÇÏ´Â °øÇ× °æ·Î¸¦ ¹è¿­¿¡ ´ã¾Æ ¸®ÅÏ
+	/** í•­ê³µê¶Œì„ ëª¨ë‘ ì´ìš©í•´ì„œ ì—¬í–‰ê²½ë¡œ ì§œê¸° 
+	 * ICN ê³µí•­ì—ì„œ ì¶œë°œ.
+	 * í•­ê³µê¶Œ ì •ë³´ tickets 2ì°¨ì› ë°°ì—´
+	 * ë°©ë¬¸í•˜ëŠ” ê³µí•­ ê²½ë¡œë¥¼ ë°°ì—´ì— ë‹´ì•„ ë¦¬í„´
 	 * 
-	 * °øÇ×ÀÌ¸§Àº ¾ËÆÄºª ´ë¹®ÀÚ 3±ÛÀÚ.
-	 * °øÇ× °¹¼ö : 3 ~ 10,000°³
-	 * Æ¼ÄÏ[a][b] : a->b·Î°¡´Â Ç×°ø±Ç
-	 * ÁÖ¾îÁø Ç×°ø±ÇÀº ´Ù ½á¾ßÇÑ´Ù.
-	 * °¡´ÉÇÑ °æ·Î°¡ 2°³ÀÌ»óÀÌ¶ó¸é, ¾ËÆÄºª ¼ø¼­°¡ ¾Õ¼­´Â °æ·Î¸¦ ¸®ÅÏ.
-	 * ¸ğµçµµ½Ã¸¦ ¹æ¹®ÇÒ¼ö ÀÖ´Â °æ·Î¸¸ ÁÖ¾îÁø´Ù.
+	 * ê³µí•­ì´ë¦„ì€ ì•ŒíŒŒë²³ ëŒ€ë¬¸ì 3ê¸€ì.
+	 * ê³µí•­ ê°¯ìˆ˜ : 3 ~ 10,000ê°œ
+	 * í‹°ì¼“[a][b] : a->bë¡œê°€ëŠ” í•­ê³µê¶Œ
+	 * ì£¼ì–´ì§„ í•­ê³µê¶Œì€ ë‹¤ ì¨ì•¼í•œë‹¤.
+	 * ê°€ëŠ¥í•œ ê²½ë¡œê°€ 2ê°œì´ìƒì´ë¼ë©´, ì•ŒíŒŒë²³ ìˆœì„œê°€ ì•ì„œëŠ” ê²½ë¡œë¥¼ ë¦¬í„´.
+	 * ëª¨ë“ ë„ì‹œë¥¼ ë°©ë¬¸í• ìˆ˜ ìˆëŠ” ê²½ë¡œë§Œ ì£¼ì–´ì§„ë‹¤.
 	 * */
 	
 	public static void main(String[] args) {
-//		String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}}; // Æ¼ÄÏ 3°³. 
+//		String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}}; // í‹°ì¼“ 3ê°œ. 
 		String[][] tickets = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
 		String[] result = solution(tickets);
 		System.out.println(Arrays.toString(result));
@@ -35,7 +35,7 @@ public class L3_¿©Çà°æ·Î {
         	Stringroute+= "Z";
         }
         int[] result = new int[n];
-        go(tickets,n,0,0, result); // 0¹øÆ¼ÄÏºÎÅÍ »ç¿ë.
+        go(tickets,n,0,0, result); // 0ë²ˆí‹°ì¼“ë¶€í„° ì‚¬ìš©.
         
         for(int i=0; i<n+1; i++) {
         	answer[i]= Stringroute.substring(3*i, 3*i+3);
@@ -46,10 +46,10 @@ public class L3_¿©Çà°æ·Î {
 	private static void go(String[][] tickets, int n, int flag, int cnt, int[] result) {
 		
 		String tmp="";
-		if(cnt == n) { // n°³ÀÇ Æ¼ÄÏÀ» ´Ù »Ì¾ÒÀ¸¸é Á¾·á.
+		if(cnt == n) { // nê°œì˜ í‹°ì¼“ì„ ë‹¤ ë½‘ì•˜ìœ¼ë©´ ì¢…ë£Œ.
 			boolean isValid = true;
 			for(int i=0; i<n-1; i++) {
-				if(tickets[result[i]][1] == tickets[result[i+1]][0]) { // Àü²¨ÀÇ 2¹øÂ°¿Í, ´ÙÀ½²¨ÀÇ 1¹øÂ°°¡ °°Àº°¡?
+				if(tickets[result[i]][1] == tickets[result[i+1]][0]) { // ì „êº¼ì˜ 2ë²ˆì§¸ì™€, ë‹¤ìŒêº¼ì˜ 1ë²ˆì§¸ê°€ ê°™ì€ê°€?
 					
 				}else {
 					isValid = false;

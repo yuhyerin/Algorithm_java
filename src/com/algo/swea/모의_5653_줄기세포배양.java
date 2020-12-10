@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ¸ðÀÇ_5653_ÁÙ±â¼¼Æ÷¹è¾ç {
+public class ëª¨ì˜_5653_ì¤„ê¸°ì„¸í¬ë°°ì–‘ {
 	/** 
-	 * ÁÙ±â¼¼Æ÷ ºñÈ°¼º »óÅÂ.
-	 * »ý¸í·Â ¼öÄ¡°¡ x : x½Ã°£ µ¿¾È ºñÈ°¼ºÈ­. x½Ã°£ Áö³ª´Â ¼ø°£ È°¼º»óÅÂ
-	 * È°¼º»óÅÂµÇ¸é, x½Ã°£µ¿¾È »ì¾ÆÀÖ°í, x½Ã°£ Áö³ª¸é Á×´Â´Ù.
-	 * È°¼º»óÅÂµÇ¸é, 1½Ã°£µ¿¾È »ó,ÇÏ,ÁÂ,¿ì ³×¹æÇâÀ¸·Î ¹ø½Ä
-	 * µÎ°³ÀÌ»óÀÇ ÁÙ±â¼¼Æ÷°¡ ÇÏ³ªÀÇ ±×¸®µå¼¿¿¡ µ¿½Ã¹ø½ÄÇÏ·Á´Â °æ¿ì »ý¸í·Â ³ôÀº ÁÙ±â¼¼Æ÷°¡ Â÷Áö.
+	 * ì¤„ê¸°ì„¸í¬ ë¹„í™œì„± ìƒíƒœ.
+	 * ìƒëª…ë ¥ ìˆ˜ì¹˜ê°€ x : xì‹œê°„ ë™ì•ˆ ë¹„í™œì„±í™”. xì‹œê°„ ì§€ë‚˜ëŠ” ìˆœê°„ í™œì„±ìƒíƒœ
+	 * í™œì„±ìƒíƒœë˜ë©´, xì‹œê°„ë™ì•ˆ ì‚´ì•„ìžˆê³ , xì‹œê°„ ì§€ë‚˜ë©´ ì£½ëŠ”ë‹¤.
+	 * í™œì„±ìƒíƒœë˜ë©´, 1ì‹œê°„ë™ì•ˆ ìƒ,í•˜,ì¢Œ,ìš° ë„¤ë°©í–¥ìœ¼ë¡œ ë²ˆì‹
+	 * ë‘ê°œì´ìƒì˜ ì¤„ê¸°ì„¸í¬ê°€ í•˜ë‚˜ì˜ ê·¸ë¦¬ë“œì…€ì— ë™ì‹œë²ˆì‹í•˜ë ¤ëŠ” ê²½ìš° ìƒëª…ë ¥ ë†’ì€ ì¤„ê¸°ì„¸í¬ê°€ ì°¨ì§€.
 	 * */
 	static int T;
 	static int N,M,K;
@@ -21,9 +21,9 @@ public class ¸ðÀÇ_5653_ÁÙ±â¼¼Æ÷¹è¾ç {
 		T = Integer.parseInt(in.readLine());
 		for(int t=1; t<=T; t++) {
 			st = new StringTokenizer(in.readLine());
-			N = Integer.parseInt(st.nextToken()); //2 (Çà)
-			M = Integer.parseInt(st.nextToken()); //2 (¿­)
-			K = Integer.parseInt(st.nextToken()); //10 (¹è¾ç½Ã°£: 1~300)
+			N = Integer.parseInt(st.nextToken()); //2 (í–‰)
+			M = Integer.parseInt(st.nextToken()); //2 (ì—´)
+			K = Integer.parseInt(st.nextToken()); //10 (ë°°ì–‘ì‹œê°„: 1~300)
 			cell = new int[N][M];
 			for(int i=0; i<N; i++) {
 				st = new StringTokenizer(in.readLine());

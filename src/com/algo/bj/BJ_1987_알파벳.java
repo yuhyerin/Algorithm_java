@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BJ_1987_¾ËÆÄºª {
+public class BJ_1987_ì•ŒíŒŒë²³ {
 	static int R, C;
 	static char[][] map;
 	static boolean[] check;
-	static int[] dy = { -1, 0, 1, 0 }; // »ó,¿ì,ÇÏ,ÁÂ
+	static int[] dy = { -1, 0, 1, 0 }; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = { 0, 1, 0, -1 };
 	static int max;
 
@@ -18,7 +18,7 @@ public class BJ_1987_¾ËÆÄºª {
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
 		map = new char[R][C];
-		check = new boolean[26]; // ¹â¾Ò´ÂÁö È®ÀÎ
+		check = new boolean[26]; // ë°Ÿì•˜ëŠ”ì§€ í™•ì¸
 		max = Integer.MIN_VALUE;
 		for (int i = 0; i < R; i++) {
 			String row = in.readLine();
@@ -27,7 +27,7 @@ public class BJ_1987_¾ËÆÄºª {
 			}
 		} // end Input
 
-		dfs(0, 0, 1); // 1°³
+		dfs(0, 0, 1); // 1ê°œ
 		System.out.println(max);
 	}
 

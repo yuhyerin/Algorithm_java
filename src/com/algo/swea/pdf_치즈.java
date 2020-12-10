@@ -1,6 +1,6 @@
 package com.algo.swea;
 
-public class pdf_Ä¡Áî {
-	/** ³ìÀÎ°É ¹Ù·Î 0À¸·Î ¹Ù²ÙÁö¸»°í, 3À¸·Î ¹Ù²ã¶ó ~ 
-	 * BJ 2583 ¿µ¿ª³ª´©±â Ç®±â! */
+public class pdf_ì¹˜ì¦ˆ {
+	/** ë…¹ì¸ê±¸ ë°”ë¡œ 0ìœ¼ë¡œ ë°”ê¾¸ì§€ë§ê³ , 3ìœ¼ë¡œ ë°”ê¿”ë¼ ~ 
+	 * BJ 2583 ì˜ì—­ë‚˜ëˆ„ê¸° í’€ê¸°! */
 }

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class L3_°¡Àå¸Õ³ëµå {
-	/** n°³ÀÇ ³ëµå°¡ ÀÖ´Â ±×·¡ÇÁ 
-	 * °¢ ³ëµå´Â 1~n ¹øÈ£°¡ ÀûÇôÀÖ´Ù.
-	 * 1¹ø³ëµå¿¡¼­ °¡Àå ¸Ö¸®¶³¾îÁø ³ëµåÀÇ °¹¼ö¸¦ ±¸ÇÑ´Ù! 
+public class L3_ê°€ì¥ë¨¼ë…¸ë“œ {
+	/** nê°œì˜ ë…¸ë“œê°€ ìˆëŠ” ê·¸ë˜í”„ 
+	 * ê° ë…¸ë“œëŠ” 1~n ë²ˆí˜¸ê°€ ì í˜€ìˆë‹¤.
+	 * 1ë²ˆë…¸ë“œì—ì„œ ê°€ì¥ ë©€ë¦¬ë–¨ì–´ì§„ ë…¸ë“œì˜ ê°¯ìˆ˜ë¥¼ êµ¬í•œë‹¤! 
 	 * */
 	public static void main(String[] args) {
-		L3_°¡Àå¸Õ³ëµå t = new L3_°¡Àå¸Õ³ëµå();
+		L3_ê°€ì¥ë¨¼ë…¸ë“œ t = new L3_ê°€ì¥ë¨¼ë…¸ë“œ();
 		int n = 6;
 		int[][] edge = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
 		int result = t.solution(n, edge);
@@ -21,31 +21,31 @@ public class L3_°¡Àå¸Õ³ëµå {
         int answer = 0;
         
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-        for(int i=0; i<edge.length; i++) {// ÃÊ±âÈ­ 
+        for(int i=0; i<edge.length; i++) {// ì´ˆê¸°í™” 
         	list.add(new ArrayList<Integer>()); 
         }
         
-        for(int i=0; i<edge.length;i++) {// ³ëµå ¿¬°á 
+        for(int i=0; i<edge.length;i++) {// ë…¸ë“œ ì—°ê²° 
         	int a = edge[i][0];
         	int b = edge[i][1];
         	list.get(a).add(b);
         	list.get(b).add(a);
         }
         
-        int[] count = new int[n+1]; // 1°úÀÇ °Å¸®¸¦ ÀúÀåÇÒ ¹è¿­ 
-        boolean[] visited = new boolean[n+1]; //¹æ¹®Ã¼Å© 
+        int[] count = new int[n+1]; // 1ê³¼ì˜ ê±°ë¦¬ë¥¼ ì €ì¥í•  ë°°ì—´ 
+        boolean[] visited = new boolean[n+1]; //ë°©ë¬¸ì²´í¬ 
         Queue<Integer> que = new LinkedList<>();
-        que.add(1); // ½ÃÀÛÁ¡ 
+        que.add(1); // ì‹œì‘ì  
         visited[1]=true;
         int cur;
         while(!que.isEmpty()) {
         	cur = que.poll();
-        	System.out.print("ÇöÀç cur : "+cur+" °ú ¿¬°áµÈ ³ëµåµé ");
-        	for(int v : list.get(cur)) { // ³ª¶û ¿¬°áµÈ ³ëµåµé 
+        	System.out.print("í˜„ì¬ cur : "+cur+" ê³¼ ì—°ê²°ëœ ë…¸ë“œë“¤ ");
+        	for(int v : list.get(cur)) { // ë‚˜ë‘ ì—°ê²°ëœ ë…¸ë“œë“¤ 
         		if(!visited[v]) {
         			System.out.print(v);
-        			count[v] = count[cur]+1; // 1°úÀÇ ±æÀÌ¸¦ ÀúÀå.
-        			System.out.print(" - °Å¸® "+count[v]+"   ");
+        			count[v] = count[cur]+1; // 1ê³¼ì˜ ê¸¸ì´ë¥¼ ì €ì¥.
+        			System.out.print(" - ê±°ë¦¬ "+count[v]+"   ");
         			visited[v]=true;
         			que.add(v);
         		}

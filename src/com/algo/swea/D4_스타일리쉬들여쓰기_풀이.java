@@ -5,18 +5,18 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â_Ç®ÀÌ {
+public class D4_ìŠ¤íƒ€ì¼ë¦¬ì‰¬ë“¤ì—¬ì“°ê¸°_í’€ì´ {
 
 	/**
-	 * ¾ËÆÄºª, ¼¼Á¾·ù°ýÈ£, ¿ÂÁ¡(.), °³Çà¹®ÀÚ °ýÈ£´Â Â¦ÀÌ ¸Â°Ô ½á¾ß ÇÑ´Ù. ( ) [ ] { } °ýÈ£°¡ µîÀåÇÑ È½¼ö¿¡ µû¶ó µé¿©¾²±â¸¦ ÇÏ´Â
-	 * Á¤µµ°¡ ´Þ¶óÁø´Ù! R,C,S ¼Ò°ý¼Ò°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â °¹¼ö¸¸Å­ R¹ø¾¿ Áß°ýÈ£°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â °¹¼ö¸¸Å­ C¹ø¾¿, ´ë°ýÈ£°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â
-	 * °¹¼ö¸¸Å­ S¹ø¾¿
+	 * ì•ŒíŒŒë²³, ì„¸ì¢…ë¥˜ê´„í˜¸, ì˜¨ì (.), ê°œí–‰ë¬¸ìž ê´„í˜¸ëŠ” ì§ì´ ë§žê²Œ ì¨ì•¼ í•œë‹¤. ( ) [ ] { } ê´„í˜¸ê°€ ë“±ìž¥í•œ íšŸìˆ˜ì— ë”°ë¼ ë“¤ì—¬ì“°ê¸°ë¥¼ í•˜ëŠ”
+	 * ì •ë„ê°€ ë‹¬ë¼ì§„ë‹¤! R,C,S ì†Œê´„ì†Œê°€ ì§ì´ ë§žì§€ ì•ŠëŠ” ê°¯ìˆ˜ë§Œí¼ Rë²ˆì”© ì¤‘ê´„í˜¸ê°€ ì§ì´ ë§žì§€ ì•ŠëŠ” ê°¯ìˆ˜ë§Œí¼ Cë²ˆì”©, ëŒ€ê´„í˜¸ê°€ ì§ì´ ë§žì§€ ì•ŠëŠ”
+	 * ê°¯ìˆ˜ë§Œí¼ Së²ˆì”©
 	 * 
-	 * ³» ÄÚµå¿¡´Â °¢ ÁÙ¸¶´Ù ¸î¹ø¾¿ µé¿©¾²±â ÇØ¾ßÇÏ´ÂÁö Ãâ·Â!
+	 * ë‚´ ì½”ë“œì—ëŠ” ê° ì¤„ë§ˆë‹¤ ëª‡ë²ˆì”© ë“¤ì—¬ì“°ê¸° í•´ì•¼í•˜ëŠ”ì§€ ì¶œë ¥!
 	 */
 	static int T;
-	static int p; // p: ½ºÅ¸ÀÏ¸®½¬¸¦ ¸¶½ºÅÍÇÑ »ç¶÷ ÄÚµå ÁÙ¼ö
-	static int q; // q: ³» ÄÚµå ÁÙ ¼ö
+	static int p; // p: ìŠ¤íƒ€ì¼ë¦¬ì‰¬ë¥¼ ë§ˆìŠ¤í„°í•œ ì‚¬ëžŒ ì½”ë“œ ì¤„ìˆ˜
+	static int q; // q: ë‚´ ì½”ë“œ ì¤„ ìˆ˜
 	static char[][] master;
 	static char[][] me;
 	static int[] result;
@@ -30,8 +30,8 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â_Ç®ÀÌ {
 			q = Integer.parseInt(st.nextToken());
 			master = new char[p][];
 			me = new char[q][];
-			result = new int[q]; // ³»ÄÚµå °¢ Çà¸¶´Ù µé¿©¾²±â ÇØ¾ßµÇ´Â ¼ö (-1ÀÌ¸é °áÁ¤ºÒ°¡´É )
-			Arrays.fill(result, -2); // Ã³À½ µé¿©¾²±â ½ÃµµÇÏ´Â °ÍÀ¸·Î ÆÇ´ÜÇÏ±âÀ§ÇØ -2·Î ÃÊ±âÈ­!
+			result = new int[q]; // ë‚´ì½”ë“œ ê° í–‰ë§ˆë‹¤ ë“¤ì—¬ì“°ê¸° í•´ì•¼ë˜ëŠ” ìˆ˜ (-1ì´ë©´ ê²°ì •ë¶ˆê°€ëŠ¥ )
+			Arrays.fill(result, -2); // ì²˜ìŒ ë“¤ì—¬ì“°ê¸° ì‹œë„í•˜ëŠ” ê²ƒìœ¼ë¡œ íŒë‹¨í•˜ê¸°ìœ„í•´ -2ë¡œ ì´ˆê¸°í™”!
 			
 			for(int i=0; i<p; i++) {
 				master[i] = in.readLine().toCharArray();
@@ -41,11 +41,11 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â_Ç®ÀÌ {
 				me[i]= in.readLine().toCharArray();
 			}// end Input me
 
-			for(int r=1; r<=20; r++) { //¸ðµç r,c,s Á¶ÇÕ 
+			for(int r=1; r<=20; r++) { //ëª¨ë“  r,c,s ì¡°í•© 
 				for(int c=1; c<=20; c++) {
 					for(int s=1; s<=20; s--) {
-						if(isOk(r,c,s)) { // r,c,s °æ¿ì ÇÏ³ª ¸¸µé¾î¼­ À¯È¿ÇÑ ½ÖÀÎÁö Ã¼Å©.
-							useRCS(r,c,s); // ³»ÄÚµå¿¡ Àû¿ë½ÃÄÑ!
+						if(isOk(r,c,s)) { // r,c,s ê²½ìš° í•˜ë‚˜ ë§Œë“¤ì–´ì„œ ìœ íš¨í•œ ìŒì¸ì§€ ì²´í¬.
+							useRCS(r,c,s); // ë‚´ì½”ë“œì— ì ìš©ì‹œì¼œ!
 						}
 					}
 				}
@@ -87,18 +87,18 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â_Ç®ÀÌ {
 		int rCnt=0, cCnt=0, sCnt=0;
 		for(int i=0; i<p; i++) {
 			
-			int dotCnt = 0; // Á¡°¹¼ö (°ø¹é°¹¼ö)
+			int dotCnt = 0; // ì ê°¯ìˆ˜ (ê³µë°±ê°¯ìˆ˜)
 			for(char ch : master[i]) {
 				if(ch=='.') dotCnt++;
 				else break;
 			}
 			int tab = r*rCnt + c*cCnt + s*sCnt;
 			
-			if(tab != dotCnt) { // ÇöÀç ÁÖ¾îÁø r,c,s °¡Áö°í ¸¶½ºÅÍÀÇ µé¿©¾²±â °¹¼ö¿Í ¸ÅÄªµÇ´ÂÁö È®ÀÎ!
+			if(tab != dotCnt) { // í˜„ìž¬ ì£¼ì–´ì§„ r,c,s ê°€ì§€ê³  ë§ˆìŠ¤í„°ì˜ ë“¤ì—¬ì“°ê¸° ê°¯ìˆ˜ì™€ ë§¤ì¹­ë˜ëŠ”ì§€ í™•ì¸!
 				return false;
 			}
 			
-			for(int j=0; j< master[i].length; j++) { // ÇöÀç ÇàÀÇ °ýÈ£µéÀÇ Â÷ÀÌ °è»ê.
+			for(int j=0; j< master[i].length; j++) { // í˜„ìž¬ í–‰ì˜ ê´„í˜¸ë“¤ì˜ ì°¨ì´ ê³„ì‚°.
 				switch(master[i][j]) {
 					case '(': rCnt++; break;
 					case ')': rCnt--; break;

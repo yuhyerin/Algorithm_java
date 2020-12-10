@@ -1,10 +1,10 @@
 package com.algo.programmers;
 
-public class L3_³×Æ®¿öÅ©2 {
+public class L3_ë„¤íŠ¸ì›Œí¬2 {
 	
-	/** A-B, B-C ¿¬°áµÇ¾î ÀÖÀ» ¶§, A¿Í Cµµ Á¤º¸±³È¯ °¡´É!
-	 * ³×Æ®¿öÅ© °¹¼ö ¸®ÅÏ. 
-	 * ÄÄÇ»ÅÍ°¹¼ö n : 1~200
+	/** A-B, B-C ì—°ê²°ë˜ì–´ ìˆì„ ë•Œ, Aì™€ Cë„ ì •ë³´êµí™˜ ê°€ëŠ¥!
+	 * ë„¤íŠ¸ì›Œí¬ ê°¯ìˆ˜ ë¦¬í„´. 
+	 * ì»´í“¨í„°ê°¯ìˆ˜ n : 1~200
 	 * */
 	public static void main(String[] args) {
 		int n = 3;
@@ -17,11 +17,11 @@ public class L3_³×Æ®¿öÅ©2 {
 
 	public static int solution(int n, int[][] computers) {
         int answer = 0;
-        boolean[] visit = new boolean[n]; // ¹æ¹®Ã¼Å© 
+        boolean[] visit = new boolean[n]; // ë°©ë¬¸ì²´í¬ 
 
         for(int i=0; i<n; i++) {
-        	if(!visit[i]) { // false¸é,
-//        		System.out.println(i+" Ã³À½¹æ¹®!");
+        	if(!visit[i]) { // falseë©´,
+//        		System.out.println(i+" ì²˜ìŒë°©ë¬¸!");
         		dfs(n, computers, visit, i);
         		answer++;
         	}
@@ -33,10 +33,10 @@ public class L3_³×Æ®¿öÅ©2 {
 
 	private static void dfs(int n, int[][] computers, boolean[] visit, int start) {
 		visit[start] = true;
-//		System.out.println(start+" ¹æ¹®Ç¥½Ã  !");
+//		System.out.println(start+" ë°©ë¬¸í‘œì‹œ  !");
 		for(int i=0; i<n; i++) {
 			if(computers[start][i]==1 && !visit[i]) {
-//				System.out.println(start+"°ú "+i +" ¿¬°áµÇ¾îÀÖÀ½!");
+//				System.out.println(start+"ê³¼ "+i +" ì—°ê²°ë˜ì–´ìˆìŒ!");
 				dfs(n,computers, visit, i);
 			}
 		}

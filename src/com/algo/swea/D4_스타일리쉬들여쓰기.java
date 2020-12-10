@@ -4,18 +4,18 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
+public class D4_ìŠ¤íƒ€ì¼ë¦¬ì‰¬ë“¤ì—¬ì“°ê¸° {
 
 	/**
-	 * ¾ËÆÄºª, ¼¼Á¾·ù°ıÈ£, ¿ÂÁ¡(.), °³Çà¹®ÀÚ °ıÈ£´Â Â¦ÀÌ ¸Â°Ô ½á¾ß ÇÑ´Ù. ( ) [ ] { } °ıÈ£°¡ µîÀåÇÑ È½¼ö¿¡ µû¶ó µé¿©¾²±â¸¦ ÇÏ´Â
-	 * Á¤µµ°¡ ´Ş¶óÁø´Ù! R,C,S ¼Ò°ı¼Ò°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â °¹¼ö¸¸Å­ R¹ø¾¿ Áß°ıÈ£°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â °¹¼ö¸¸Å­ C¹ø¾¿, ´ë°ıÈ£°¡ Â¦ÀÌ ¸ÂÁö ¾Ê´Â
-	 * °¹¼ö¸¸Å­ S¹ø¾¿
+	 * ì•ŒíŒŒë²³, ì„¸ì¢…ë¥˜ê´„í˜¸, ì˜¨ì (.), ê°œí–‰ë¬¸ì ê´„í˜¸ëŠ” ì§ì´ ë§ê²Œ ì¨ì•¼ í•œë‹¤. ( ) [ ] { } ê´„í˜¸ê°€ ë“±ì¥í•œ íšŸìˆ˜ì— ë”°ë¼ ë“¤ì—¬ì“°ê¸°ë¥¼ í•˜ëŠ”
+	 * ì •ë„ê°€ ë‹¬ë¼ì§„ë‹¤! R,C,S ì†Œê´„ì†Œê°€ ì§ì´ ë§ì§€ ì•ŠëŠ” ê°¯ìˆ˜ë§Œí¼ Rë²ˆì”© ì¤‘ê´„í˜¸ê°€ ì§ì´ ë§ì§€ ì•ŠëŠ” ê°¯ìˆ˜ë§Œí¼ Cë²ˆì”©, ëŒ€ê´„í˜¸ê°€ ì§ì´ ë§ì§€ ì•ŠëŠ”
+	 * ê°¯ìˆ˜ë§Œí¼ Së²ˆì”©
 	 * 
-	 * ³» ÄÚµå¿¡´Â °¢ ÁÙ¸¶´Ù ¸î¹ø¾¿ µé¿©¾²±â ÇØ¾ßÇÏ´ÂÁö Ãâ·Â!
+	 * ë‚´ ì½”ë“œì—ëŠ” ê° ì¤„ë§ˆë‹¤ ëª‡ë²ˆì”© ë“¤ì—¬ì“°ê¸° í•´ì•¼í•˜ëŠ”ì§€ ì¶œë ¥!
 	 */
 	static int T;
-	static int p; // p: ½ºÅ¸ÀÏ¸®½¬¸¦ ¸¶½ºÅÍÇÑ »ç¶÷ ÄÚµå ÁÙ¼ö
-	static int q; // q: ³» ÄÚµå ÁÙ ¼ö
+	static int p; // p: ìŠ¤íƒ€ì¼ë¦¬ì‰¬ë¥¼ ë§ˆìŠ¤í„°í•œ ì‚¬ëŒ ì½”ë“œ ì¤„ìˆ˜
+	static int q; // q: ë‚´ ì½”ë“œ ì¤„ ìˆ˜
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -39,7 +39,7 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 						break;
 					}
 				}
-				result[i] = cnt; // result´Â . °¹¼ö ÀúÀå ¹è¿­
+				result[i] = cnt; // resultëŠ” . ê°¯ìˆ˜ ì €ì¥ ë°°ì—´
 				for(int j=0; j<line.length(); j++) {
 					if(line.charAt(j)=='(') {
 						a++;
@@ -70,7 +70,7 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 				mycode[i]= in.readLine();
 			}// end Input mycode
 
-			// ÃÖ´ë 10ÁÙ, 1ÁÙ¿¡ 80ÀÚ.
+			// ìµœëŒ€ 10ì¤„, 1ì¤„ì— 80ì.
 			// R, C,S 1~20
 			int Rcount =0;
 			int Ccount=0;
@@ -79,7 +79,7 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 				for (c = 1; c <= 20; c++) {
 					for (int s = 1; s <= 20; s++) {
 						int cnt=0;
-						// ¸ğµç °æ¿ì¸¦ ´Ù ¸¸Á·ÇÏ´Ï??? 
+						// ëª¨ë“  ê²½ìš°ë¥¼ ë‹¤ ë§Œì¡±í•˜ë‹ˆ??? 
 						for (int i = 0; i < p-1 ; i++) {
 							if (r*RCS[i][0] + c*RCS[i][1] + s*RCS[i][2] == result[i+1]) {
 								cnt++;
@@ -87,7 +87,7 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 								break;
 							}
 						}
-						if(cnt==p-1) { //¸ğµç °æ¿ì¸¦ ´Ù ¸¸Á·ÇÏ´Â R,C,S°¡ Á¸Àç 
+						if(cnt==p-1) { //ëª¨ë“  ê²½ìš°ë¥¼ ë‹¤ ë§Œì¡±í•˜ëŠ” R,C,Sê°€ ì¡´ì¬ 
 							if(R != r) Rcount++;
 							if(C != c) Ccount++;
 							if(S != s) Scount++;
@@ -99,7 +99,7 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 				}
 			} // end outer
 			
-			// ³»ÄÚµå.
+			// ë‚´ì½”ë“œ.
 			System.out.print("#"+t+" 0 ");
 			int a2 = 0, b2 = 0, c2 = 0, d2 = 0, e2 = 0, f2 = 0;
 			for (int i = 0; i < q-1; i++) {
@@ -129,23 +129,23 @@ public class D4_½ºÅ¸ÀÏ¸®½¬µé¿©¾²±â {
 					if(c2-d2==0) {
 						if(e2-f2==0) {
 							System.out.print((R*(a2-b2)+ C*(c2-d2)+ S*(e2-f2))+" ");
-						}else {// S°¡ ¾²ÀÓ 
-							if(Scount!=1) { // S°¡ ¹ÌÈ®Á¤
+						}else {// Sê°€ ì“°ì„ 
+							if(Scount!=1) { // Sê°€ ë¯¸í™•ì •
 								System.out.print(-1+" ");
 							}else {
 								System.out.print((R*(a2-b2)+ C*(c2-d2)+ S*(e2-f2))+" ");
 							}
 						}
-					}else { //C°¡ ¾²ÀÓ
-						if(Ccount!=1) { // C°¡ ¹ÌÈ®Á¤
+					}else { //Cê°€ ì“°ì„
+						if(Ccount!=1) { // Cê°€ ë¯¸í™•ì •
 							System.out.print(-1+" ");
 						}else {
 							System.out.print((R*(a2-b2)+ C*(c2-d2)+ S*(e2-f2))+" ");
 						}
 						
 					}
-				}else { // RÀÌ ¾²ÀÓ
-					if(Rcount!=1) { // S°¡ ¹ÌÈ®Á¤
+				}else { // Rì´ ì“°ì„
+					if(Rcount!=1) { // Sê°€ ë¯¸í™•ì •
 						System.out.print(-1+" ");
 					}else {
 						System.out.print((R*(a2-b2)+ C*(c2-d2)+ S*(e2-f2))+" ");

@@ -2,9 +2,9 @@ package com.algo.swea;
 
 public class BFS {
 	/**
-	 * 4¹æÀ» ´Ù °¡º¸°í, ÀÌµ¿ 
-	 * BFS´Â Queue ÀÌ¿ëÇÑ´Ù! 
-	 * ´ÜÁ¡ : ¹Ù·Î ¿·¿¡¼­ºÎÅÍ Ã£±â¶§¹®¿¡, ¸Ö¸®ÀÖ´Â°Å Ã£´Âµ¥ ¿À·¡°É¸°´Ù.
+	 * 4ë°©ì„ ë‹¤ ê°€ë³´ê³ , ì´ë™ 
+	 * BFSëŠ” Queue ì´ìš©í•œë‹¤! 
+	 * ë‹¨ì  : ë°”ë¡œ ì˜†ì—ì„œë¶€í„° ì°¾ê¸°ë•Œë¬¸ì—, ë©€ë¦¬ìžˆëŠ”ê±° ì°¾ëŠ”ë° ì˜¤ëž˜ê±¸ë¦°ë‹¤.
 	 * */
 	
 }

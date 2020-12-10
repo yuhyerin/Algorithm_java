@@ -3,11 +3,11 @@ package com.algo.programmers;
 import java.util.HashSet;
 import java.util.Set;
 
-public class L3_³×Æ®¿öÅ© {
+public class L3_ë„¤íŠ¸ì›Œí¬ {
 	
-	/** A-B, B-C ¿¬°áµÇ¾î ÀÖÀ» ¶§, A¿Í Cµµ Á¤º¸±³È¯ °¡´É!
-	 * ³×Æ®¿öÅ© °¹¼ö ¸®ÅÏ. 
-	 * ÄÄÇ»ÅÍ°¹¼ö n : 1~200
+	/** A-B, B-C ì—°ê²°ë˜ì–´ ìˆì„ ë•Œ, Aì™€ Cë„ ì •ë³´êµí™˜ ê°€ëŠ¥!
+	 * ë„¤íŠ¸ì›Œí¬ ê°¯ìˆ˜ ë¦¬í„´. 
+	 * ì»´í“¨í„°ê°¯ìˆ˜ n : 1~200
 	 * */
 	public static void main(String[] args) {
 		int n = 3;
@@ -20,7 +20,7 @@ public class L3_³×Æ®¿öÅ© {
 	static int[] parents;
 	public static int solution(int n, int[][] computers) {
         int answer = 0;
-        parents = new int[n]; // ´©±¸ÆÀÀÎÁö ³ªÅ¸³¾ ¹è¿­.
+        parents = new int[n]; // ëˆ„êµ¬íŒ€ì¸ì§€ ë‚˜íƒ€ë‚¼ ë°°ì—´.
         
         for(int i=0; i<n;i++) {
         	parents[i] = i; // parents = { 0, 1, 2 } 
@@ -38,7 +38,7 @@ public class L3_³×Æ®¿öÅ© {
         	}
         }
         
-        Set<Integer> set = new HashSet<>(); //Áßº¹¾ø´Â ÀÚ·á±¸Á¶ 
+        Set<Integer> set = new HashSet<>(); //ì¤‘ë³µì—†ëŠ” ìë£Œêµ¬ì¡° 
         for(int i=0; i<n; i++) {
         	set.add(parents[i]);
         }
@@ -49,10 +49,10 @@ public class L3_³×Æ®¿öÅ© {
 	
 	static int findSet(int x) {
 
-		if (parents[x] == x) { // ³»ºÎ¸ğ°¡ ³ª¶ó¸é ³» ½Äº°ÀÚ´Â ³ªÀÓ.
+		if (parents[x] == x) { // ë‚´ë¶€ëª¨ê°€ ë‚˜ë¼ë©´ ë‚´ ì‹ë³„ìëŠ” ë‚˜ì„.
 			return x;
-		} else { // ³»ºÎ¸ğ¿¡°Ô ½ÃÄÑ¼­ ³»ºÎ¸ğÀÇ ºÎ¸ğ°¡ ÀÚ½ÅÀÌ µÇ´Â¾Ö¸¦ Àç±ÍÀûÀ¸·Î °Å½½·¯ ¿Ã¶ó°¡¸é¼­ Ã£°Ô ÇÑ´Ù.
-			parents[x] = findSet(parents[x]); // path compressionÀ¸·Î ¼º´É°³¼±..
+		} else { // ë‚´ë¶€ëª¨ì—ê²Œ ì‹œì¼œì„œ ë‚´ë¶€ëª¨ì˜ ë¶€ëª¨ê°€ ìì‹ ì´ ë˜ëŠ”ì• ë¥¼ ì¬ê·€ì ìœ¼ë¡œ ê±°ìŠ¬ëŸ¬ ì˜¬ë¼ê°€ë©´ì„œ ì°¾ê²Œ í•œë‹¤.
+			parents[x] = findSet(parents[x]); // path compressionìœ¼ë¡œ ì„±ëŠ¥ê°œì„ ..
 			return parents[x];
 		}
 	}

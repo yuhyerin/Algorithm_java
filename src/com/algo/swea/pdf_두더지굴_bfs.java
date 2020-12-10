@@ -7,12 +7,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class pdf_µÎ´õÁö±¼_bfs {
-	/** Çª´Â¹ı 3°¡Áö: 1.¸®ÅÏÀÌ ÀÖ´Â DFS 2. ¸®ÅÏÀÌ ¾ø´Â DFS 3. ¸®ÅÏÀÌ ¾ø´Â BFS */
+public class pdf_ë‘ë”ì§€êµ´_bfs {
+	/** í‘¸ëŠ”ë²• 3ê°€ì§€: 1.ë¦¬í„´ì´ ìˆëŠ” DFS 2. ë¦¬í„´ì´ ì—†ëŠ” DFS 3. ë¦¬í„´ì´ ì—†ëŠ” BFS */
 	static int N;
 	static int[][] map;
 	static int[][] visit;
-	static int[] dy = {-1,0,1,0}; // »ó, ¿ì, ÇÏ, ÁÂ 
+	static int[] dy = {-1,0,1,0}; // ìƒ, ìš°, í•˜, ì¢Œ 
 	static int[] dx = {0,1,0,-1};
 	static ArrayList<Integer> counting;
 	public static void main(String[] args) throws Exception{
@@ -58,7 +58,7 @@ public class pdf_µÎ´õÁö±¼_bfs {
 	
 	private static void bfs(int y, int x, int group) {
 		
-		// <int[]> ÇÏ¸é Å©±â°¡ ±Û °æ¿ì ÅÍÁö´Â »óÈ²ÀÌ °¡²û ¹ß»ı! 
+		// <int[]> í•˜ë©´ í¬ê¸°ê°€ ê¸€ ê²½ìš° í„°ì§€ëŠ” ìƒí™©ì´ ê°€ë” ë°œìƒ! 
 		Queue<Loc> que = new LinkedList<>();
 		que.offer(new Loc(y,x));
 		visit[y][x] = group;

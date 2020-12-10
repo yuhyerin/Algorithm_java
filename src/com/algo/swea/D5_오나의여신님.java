@@ -8,17 +8,17 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
- * ¼ö¿¬ÀÌÀ§Ä¡: S ¿©½ÅÀÇ°ø°£: D -> ºÎ½ÄX µ¹ÀÇ À§Ä¡: X -> µ¹ ¸ø¹â´Â´Ù. ºÎ½ÄX ¾Ç¸¶ : * -> ½ºÅ³»ç¿ë. ¸ÅÃÊ »óÇÏÁÂ¿ì ÀÎÁ¢¿µ¿ª
- * ºÎ½Ä½ÃÅ°¸ç È®Àå. Æò¹üÇÑÁö¿ª: . ¿©½ÅÇÑÅ× µµÂøÇÏ´Â ÃÖ¼Ò½Ã°£ Ãâ·Â
+ * ìˆ˜ì—°ì´ìœ„ì¹˜: S ì—¬ì‹ ì˜ê³µê°„: D -> ë¶€ì‹X ëŒì˜ ìœ„ì¹˜: X -> ëŒ ëª»ë°ŸëŠ”ë‹¤. ë¶€ì‹X ì•…ë§ˆ : * -> ìŠ¤í‚¬ì‚¬ìš©. ë§¤ì´ˆ ìƒí•˜ì¢Œìš° ì¸ì ‘ì˜ì—­
+ * ë¶€ì‹ì‹œí‚¤ë©° í™•ì¥. í‰ë²”í•œì§€ì—­: . ì—¬ì‹ í•œí…Œ ë„ì°©í•˜ëŠ” ìµœì†Œì‹œê°„ ì¶œë ¥
  */
 
-public class D5_¿À³ªÀÇ¿©½Å´Ô {
-	// Ãâ·ÂÀ» ¸ğ¾Æ¼­ ÇÏ±âÀ§ÇØ¼­!!
+public class D5_ì˜¤ë‚˜ì˜ì—¬ì‹ ë‹˜ {
+	// ì¶œë ¥ì„ ëª¨ì•„ì„œ í•˜ê¸°ìœ„í•´ì„œ!!
 	static StringBuilder sb = new StringBuilder();
 	static int T, R, C, min;
 	static char[][] map;
-	// »ç¹æÅ½»ö.
-	static int[] dy = { -1, 0, 1, 0 }; // »ó,¿ì,ÇÏ,ÁÂ
+	// ì‚¬ë°©íƒìƒ‰.
+	static int[] dy = { -1, 0, 1, 0 }; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = { 0, 1, 0, -1 };
 	static Queue<Point> points;
 
@@ -55,12 +55,12 @@ public class D5_¿À³ªÀÇ¿©½Å´Ô {
 					int nc = front.col + dx[d];
 					if (!canGo(nr, nc))
 						continue;
-					if (front.isDevil) {// ¾Ç¸¶
+					if (front.isDevil) {// ì•…ë§ˆ
 						if (map[nr][nc] == '.' || map[nr][nc] == 'S') {
 							map[nr][nc] = '*';
 							points.add(new Point(nr, nc, front.depth + 1, true));
 						}
-					} else {// ¼ö¿¬
+					} else {// ìˆ˜ì—°
 						if (map[nr][nc] == 'D') {
 							min = front.depth + 1;
 							break outer;

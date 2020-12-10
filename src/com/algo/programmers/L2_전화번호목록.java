@@ -2,10 +2,10 @@ package com.algo.programmers;
 
 import java.util.HashSet;
 
-public class L2_ÀüÈ­¹øÈ£¸ñ·Ï {
+public class L2_ì „í™”ë²ˆí˜¸ëª©ë¡ {
 	
-	/** ÀüÈ­¹øÈ£ºÎ¿¡ ÀûÈù ÀüÈ­¹øÈ£ Áß, ÇÑ ¹øÈ£°¡ ´Ù¸¥¹øÈ£ÀÇ Á¢µÎ¾îÀÎ °æ¿ì°¡ ÀÖ´ÂÁö? È®ÀÎ
-	 * ÀÖÀ¸¸é false ¸®ÅÏ */
+	/** ì „í™”ë²ˆí˜¸ë¶€ì— ì íŒ ì „í™”ë²ˆí˜¸ ì¤‘, í•œ ë²ˆí˜¸ê°€ ë‹¤ë¥¸ë²ˆí˜¸ì˜ ì ‘ë‘ì–´ì¸ ê²½ìš°ê°€ ìˆëŠ”ì§€? í™•ì¸
+	 * ìˆìœ¼ë©´ false ë¦¬í„´ */
 	public static void main(String[] args) {
 //		String[] phone_book = { "119", "97674223", "1195524421"};
 		String[] phone_book = { "12","123","1235","567","88"};
@@ -20,7 +20,7 @@ public class L2_ÀüÈ­¹øÈ£¸ñ·Ï {
 		for(String phone : phone_book) {
 			
 			for(String s : set) {
-				if(phone.startsWith(s) || s.startsWith(phone)) { // ¼­·Î°¡ Æ÷ÇÔ°ü°èÀÎÁö ºñ±³... 
+				if(phone.startsWith(s) || s.startsWith(phone)) { // ì„œë¡œê°€ í¬í•¨ê´€ê³„ì¸ì§€ ë¹„êµ... 
 					return false;
 				}
 			}

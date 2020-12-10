@@ -7,16 +7,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class D4_À½½Ä¹è´Ş2 {
+public class D4_ìŒì‹ë°°ë‹¬2 {
 	/**
-	 * 0:ºóÄ­ 2ÀÌ»ó : À½½Ä¹è´ŞÁı ¹× ¿î¿µºñ , 1: Áı ¹è´Ş°Å¸® : Áı°ú °¡Àå°¡±î¿î À½½Ä¹è´ŞÁı »çÀÌÀÇ °Å¸®
+	 * 0:ë¹ˆì¹¸ 2ì´ìƒ : ìŒì‹ë°°ë‹¬ì§‘ ë° ìš´ì˜ë¹„ , 1: ì§‘ ë°°ë‹¬ê±°ë¦¬ : ì§‘ê³¼ ê°€ì¥ê°€ê¹Œìš´ ìŒì‹ë°°ë‹¬ì§‘ ì‚¬ì´ì˜ ê±°ë¦¬
 	 */
 	static int T, N;
 	static int[][] map;
 	static boolean[][] visit;
-	static int[] dy = { 0, -1, 0, 1 };// ÁÂ,»ó,¿ì,ÇÏ
+	static int[] dy = { 0, -1, 0, 1 };// ì¢Œ,ìƒ,ìš°,í•˜
 	static int[] dx = { -1, 0, 1, 0 };
-	static int[] ddy = { -1, -1, 1, 1 }; // ÁÂ»ó, ¿ì»ó, ¿ìÇÏ, ÁÂÇÏ
+	static int[] ddy = { -1, -1, 1, 1 }; // ì¢Œìƒ, ìš°ìƒ, ìš°í•˜, ì¢Œí•˜
 	static int[] ddx = { -1, 1, 1, -1 };
 
 	public static void main(String[] args) throws Exception {
@@ -38,27 +38,27 @@ public class D4_À½½Ä¹è´Ş2 {
 			int result = 0;
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
-					if (map[i][j] == 1) { // ÁıÀ» ¸¸³ª¸é
-						que.add(new int[] { i, j, 0 }); // ÁıÁÂÇ¥ + °Å¸®
+					if (map[i][j] == 1) { // ì§‘ì„ ë§Œë‚˜ë©´
+						que.add(new int[] { i, j, 0 }); // ì§‘ì¢Œí‘œ + ê±°ë¦¬
 					}
 					while (!que.isEmpty()) {
 						int[] cur = que.poll();
 						boolean flag = true;
-						for (int d = 0; d < 4; d++) { // Á¤4¹æÇâ
+						for (int d = 0; d < 4; d++) { // ì •4ë°©í–¥
 							int ny = cur[0] + dy[d];
 							int nx = cur[1] + dx[d];
 							int dist = cur[2] + 1;
 							if (!canGo(ny, nx))
 								continue;
-							if (map[ny][nx] >= 2) {// °¡°Ô¸¦ ¸¸³ª¸é
+							if (map[ny][nx] >= 2) {// ê°€ê²Œë¥¼ ë§Œë‚˜ë©´
 								result += dist;
 								flag = false;
-								visit[ny][nx] = true; // °¡°ÔÁÂÇ¥ ÀúÀå.
+								visit[ny][nx] = true; // ê°€ê²Œì¢Œí‘œ ì €ì¥.
 								que = new LinkedList<>();
 								break;
 							}
 						}
-						for (int d = 0; flag && d < 4; d++) { // ´ë°¢¼±¹æ
+						for (int d = 0; flag && d < 4; d++) { // ëŒ€ê°ì„ ë°©
 							int ny = cur[0] + ddy[d];
 							int nx = cur[1] + ddx[d];
 							int dist = cur[2] + 2;
@@ -67,12 +67,12 @@ public class D4_À½½Ä¹è´Ş2 {
 							if (map[ny][nx] >= 2) {
 								result += dist;
 								flag = false;
-								visit[ny][nx] = true; // °¡°ÔÁÂÇ¥ ÀúÀå.
+								visit[ny][nx] = true; // ê°€ê²Œì¢Œí‘œ ì €ì¥.
 								que = new LinkedList<>();
 								break;
 							}
 						}
-						if(flag) {// ÁÖº¯8¹æ¿¡ °¡°Ô°¡ ¾øÀ½.
+						if(flag) {// ì£¼ë³€8ë°©ì— ê°€ê²Œê°€ ì—†ìŒ.
 							for(int k=0; k<4; k++) {
 								int ny = cur[0]+dy[k];
 								int nx = cur[1]+dx[k];

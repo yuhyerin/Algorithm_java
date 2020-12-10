@@ -1,10 +1,10 @@
 package com.algo.programmers;
 
-public class L1_Å«¼ö¸¸µé±â {
+public class L1_í°ìˆ˜ë§Œë“¤ê¸° {
 	
 	/**
-	 * ¾î¶² ¼ö¿¡¼­ k°³ÀÇ ¼ö¸¦ Á¦°ÅÇßÀ» ¶§ ¾òÀ» ¼ö ÀÖ´Â °¡Àå Å« ¼ö
-	 * 1924 ->2°³ Á¦°ÅÇÏ¸é : 19, 12,13,92,94,24  Áß¿¡ °¡Àå Å«¼ö´Â 94
+	 * ì–´ë–¤ ìˆ˜ì—ì„œ kê°œì˜ ìˆ˜ë¥¼ ì œê±°í–ˆì„ ë•Œ ì–»ì„ ìˆ˜ ìˆëŠ” ê°€ì¥ í° ìˆ˜
+	 * 1924 ->2ê°œ ì œê±°í•˜ë©´ : 19, 12,13,92,94,24  ì¤‘ì— ê°€ì¥ í°ìˆ˜ëŠ” 94
 	 * */
 	public static void main(String[] args) {
 		String number = "1924";
@@ -13,9 +13,9 @@ public class L1_Å«¼ö¸¸µé±â {
 		System.out.println(result);
 	}
 	
-	public static String solution(String number, int k) { //k´Â Á¦°ÅÇÒ °¹¼ö 
-        StringBuffer answer = new StringBuffer(number); // ½ºÆ®¸µ¹öÆÛ 
-        for(int i=0; i<k; i++) //»èÁ¦ÇÒ °¹¼ö¸¸Å­ ¹İº¹ 
+	public static String solution(String number, int k) { //këŠ” ì œê±°í•  ê°¯ìˆ˜ 
+        StringBuffer answer = new StringBuffer(number); // ìŠ¤íŠ¸ë§ë²„í¼ 
+        for(int i=0; i<k; i++) //ì‚­ì œí•  ê°¯ìˆ˜ë§Œí¼ ë°˜ë³µ 
         {
         	for(int j=0; j< answer.length();j++) {
         		if( answer.charAt(j) < answer.charAt(j+1)) {

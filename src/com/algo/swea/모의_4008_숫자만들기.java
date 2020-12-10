@@ -2,12 +2,12 @@ package com.algo.swea;
 
 import java.util.Scanner;
 
-public class ¸ğÀÇ_4008_¼ıÀÚ¸¸µé±â {
+public class ëª¨ì˜_4008_ìˆ«ìë§Œë“¤ê¸° {
 	/**
-	 * N°³ÀÇ ¼ıÀÚ (3~12°³), 1~9¼ıÀÚÄ«µå + - x / »çÄ¢¿¬»êÀÚ ¿¬»êÀÚ¿ì¼±¼øÀ§X ¿ŞÂÊ-->¿À¸¥ÂÊ Â÷·Ê·Î °è»ê ¼ıÀÚ´Â ÁÖ¾îÁø ´ë·Î
-	 * ¼ø¼­°íÁ¤. ¿¬»êÀÚ´Â »çÀÌ»çÀÌ À§Ä¡. ³ª´°¼ÀÇÒ¶§´Â, ¸ò¸¸ !
+	 * Nê°œì˜ ìˆ«ì (3~12ê°œ), 1~9ìˆ«ìì¹´ë“œ + - x / ì‚¬ì¹™ì—°ì‚°ì ì—°ì‚°ììš°ì„ ìˆœìœ„X ì™¼ìª½-->ì˜¤ë¥¸ìª½ ì°¨ë¡€ë¡œ ê³„ì‚° ìˆ«ìëŠ” ì£¼ì–´ì§„ ëŒ€ë¡œ
+	 * ìˆœì„œê³ ì •. ì—°ì‚°ìëŠ” ì‚¬ì´ì‚¬ì´ ìœ„ì¹˜. ë‚˜ëˆ—ì…ˆí• ë•ŒëŠ”, ëª«ë§Œ !
 	 * 
-	 * ÃÖ¼Ò°ª, ÃÖ´ë°ª ÀÇ Â÷ÀÌ¸¦ Ãâ·Â
+	 * ìµœì†Œê°’, ìµœëŒ€ê°’ ì˜ ì°¨ì´ë¥¼ ì¶œë ¥
 	 */
 	static int T, N;
 	static int[] numbers, giho, pickgiho;
@@ -30,7 +30,7 @@ public class ¸ğÀÇ_4008_¼ıÀÚ¸¸µé±â {
 			min = Integer.MAX_VALUE;
 			max = Integer.MIN_VALUE;
 			
-			pick(0); // ÇöÀç »ÌÀº °¹¼ö 0
+			pick(0); // í˜„ì¬ ë½‘ì€ ê°¯ìˆ˜ 0
 			int result= max - min;
 			System.out.println("#"+t+" "+result);
 		}
@@ -38,7 +38,7 @@ public class ¸ğÀÇ_4008_¼ıÀÚ¸¸µé±â {
 
 	private static void pick(int count) {
 		
-		if (count == N - 1) {//Á¾·á
+		if (count == N - 1) {//ì¢…ë£Œ
 			int sum=numbers[0];
 			for(int i=0; i<N-1; i++) {
 				int g = pickgiho[i];

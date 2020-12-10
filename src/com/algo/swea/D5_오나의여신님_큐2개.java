@@ -4,11 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class D5_¿À³ªÀÇ¿©½Å´Ô_Å¥2°³ {
+public class D5_ì˜¤ë‚˜ì˜ì—¬ì‹ ë‹˜_í2ê°œ {
 	static int T, R, C, min;
 	static char[][] map;
 	static int Dr, Dc;
-	static int[] dy = { -1, 0, 1, 0 }; // »ó,¿ì,ÇÏ,ÁÂ
+	static int[] dy = { -1, 0, 1, 0 }; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = { 0, 1, 0, -1 };
 	static Queue<int[]> player;
 	static Queue<int[]> devil;
@@ -44,8 +44,8 @@ public class D5_¿À³ªÀÇ¿©½Å´Ô_Å¥2°³ {
 					System.out.println("#"+t+" GAME OVER");
 					break;
 				}
-				bfsDevil(); //¾Ç¸¶¸ÕÀú ÀÌµ¿.
-				int count = bfsPlayer(); // ¼ö¿¬ÀÌ Go!
+				bfsDevil(); //ì•…ë§ˆë¨¼ì € ì´ë™.
+				int count = bfsPlayer(); // ìˆ˜ì—°ì´ Go!
 				if(count >0) {
 					System.out.println("#"+t+" "+count);
 					break;
@@ -66,11 +66,11 @@ public class D5_¿À³ªÀÇ¿©½Å´Ô_Å¥2°³ {
 				int ny = cy+dy[d];
 				int nx = cx+dx[d];
 				if(!canGo(ny,nx)) continue;
-				if(map[ny][nx]=='D') { //¿©½Å¸¸³ª¸é ³¡!
+				if(map[ny][nx]=='D') { //ì—¬ì‹ ë§Œë‚˜ë©´ ë!
 					return depth+1;
 				}else if(map[ny][nx]== '.') {
-					//map[cy][cx]='.'; ÀÌ°Å ¾ÈÇØÁàµµ µÅ¿ä~ ¾Ç¸¶°¡ SÀÏ¶§µµ *Ç¥½ÃÇÏ°Ô ÇØµÖ¼­!
-					map[ny][nx]='S'; // ¼ö¿¬ÀÌ°¡ Áö³ª°£ ±æ.
+					//map[cy][cx]='.'; ì´ê±° ì•ˆí•´ì¤˜ë„ ë¼ìš”~ ì•…ë§ˆê°€ Sì¼ë•Œë„ *í‘œì‹œí•˜ê²Œ í•´ë‘¬ì„œ!
+					map[ny][nx]='S'; // ìˆ˜ì—°ì´ê°€ ì§€ë‚˜ê°„ ê¸¸.
 					player.add(new int[] {ny, nx,depth+1});
 				}
 			}
@@ -80,7 +80,7 @@ public class D5_¿À³ªÀÇ¿©½Å´Ô_Å¥2°³ {
 
 	private static void bfsDevil() {
 		int size = devil.size();
-		while(size-- >0){ // !devil.isEmpty() ÇÏ¸é ¾ÈµÅ. Áö³ª°£±æÀÌ °è¼Ó Å¥¿¡ ½×¿©¼­ ¾È³¡³ª...
+		while(size-- >0){ // !devil.isEmpty() í•˜ë©´ ì•ˆë¼. ì§€ë‚˜ê°„ê¸¸ì´ ê³„ì† íì— ìŒ“ì—¬ì„œ ì•ˆëë‚˜...
 			int[] curr = devil.poll();
 			int cy = curr[0];
 			int cx = curr[1];
@@ -90,7 +90,7 @@ public class D5_¿À³ªÀÇ¿©½Å´Ô_Å¥2°³ {
 				int nx = cx+dx[d];
 				if(!canGo(ny,nx)) continue;
 				if(map[ny][nx]== '.' || map[ny][nx]=='S') {
-					map[ny][nx]='*'; // Áö³ª°£ ±æ
+					map[ny][nx]='*'; // ì§€ë‚˜ê°„ ê¸¸
 					devil.add(new int[] {ny, nx,depth+1});
 				}
 			}

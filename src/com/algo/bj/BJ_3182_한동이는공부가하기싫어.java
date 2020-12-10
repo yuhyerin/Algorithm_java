@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BJ_3182_ÇÑµ¿ÀÌ´Â°øºÎ°¡ÇÏ±â½È¾î {
+public class BJ_3182_í•œë™ì´ëŠ”ê³µë¶€ê°€í•˜ê¸°ì‹«ì–´ {
 	
 	static int N;
 	static int answer;
@@ -16,7 +16,7 @@ public class BJ_3182_ÇÑµ¿ÀÌ´Â°øºÎ°¡ÇÏ±â½È¾î {
 		answer = 0;
 		
 		for(int i=1; i<=N; i++) {
-			sunbae[i] = Integer.parseInt(in.readLine()); // i¹øÂ° ¼±¹è°¡ ¤·¤·¤·ÇÑÅ× °¡·¡
+			sunbae[i] = Integer.parseInt(in.readLine()); // ië²ˆì§¸ ì„ ë°°ê°€ ã…‡ã…‡ã…‡í•œí…Œ ê°€ë˜
 		}
 		
 		for(int i=1; i<=N; i++) {

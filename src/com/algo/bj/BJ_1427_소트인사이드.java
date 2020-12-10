@@ -2,7 +2,7 @@ package com.algo.bj;
 
 import java.util.Scanner;
 
-public class BJ_1427_¼ÒÆ®ÀÎ»çÀÌµå {
+public class BJ_1427_ì†ŒíŠ¸ì¸ì‚¬ì´ë“œ {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class BJ_1427_¼ÒÆ®ÀÎ»çÀÌµå {
 			arr[i] = num.charAt(i-1)-'0';
 		}
 		
-		// ¿À¸§Â÷¼ø 
+		// ì˜¤ë¦„ì°¨ìˆœ 
 		for(int i=len; i>=1; i--) {
 			if(!flag) {
 				break;

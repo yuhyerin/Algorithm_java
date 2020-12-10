@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class pdf_¹Ì·Î_BFS {
+public class pdf_ë¯¸ë¡œ_BFS {
 	/**
 	 * 
 5 5
@@ -21,7 +21,7 @@ public class pdf_¹Ì·Î_BFS {
 	static char[][] map;
 	static int[][] visited;
 	static int sy, sx, gy, gx;
-	static int[] dy = {-1,0,1,0}; // »ó,¿ì,ÇÏ,ÁÂ
+	static int[] dy = {-1,0,1,0}; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = {0,1,0,-1};
 	public static void main(String[] args) throws Exception{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));

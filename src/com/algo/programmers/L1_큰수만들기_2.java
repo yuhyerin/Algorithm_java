@@ -2,7 +2,7 @@ package com.algo.programmers;
 
 import java.util.Stack;
 
-public class L1_Å«¼ö¸¸µé±â_2 {
+public class L1_í°ìˆ˜ë§Œë“¤ê¸°_2 {
 
 	public static void main(String[] args) {
 		String number = "123456789";
@@ -11,7 +11,7 @@ public class L1_Å«¼ö¸¸µé±â_2 {
 		System.out.println(result);
 	}
 	
-	public static String solution(String number, int k) { //k´Â Á¦°ÅÇÒ °¹¼ö 
+	public static String solution(String number, int k) { //këŠ” ì œê±°í•  ê°¯ìˆ˜ 
         
 		 char[] result = new char[number.length() - k];
 	        Stack<Character> stack = new Stack<>();

@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
 
-public class L2_Á¶ÀÌ½ºÆ½ {
+public class L2_ì¡°ì´ìŠ¤í‹± {
 
 	/**
-	 * Ã³À½¿£ A·Î¸¸ ÀÌ·ç¾îÁ® ÀÖ½À´Ï´Ù. ^ : ´ÙÀ½¾ËÆÄºª v : ÀÌÀü¾ËÆÄºª (A¿¡¼­´Â Z·Î) < : Ä¿¼­¸¦ ¿ÞÂÊÀ¸·Î ÀÌµ¿ > : Ä¿¼­¸¦
-	 * ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿ AAA À§·Î 9¹ø : JAA ¿ÞÂÊ1¹ø : Ä¿¼­¸¦ ¸ÇµÚ·Î ÀÌµ¿ ¾Æ·¡·Î 1¹ø: JAZ ÅäÅ»:11¹øÀÌµ¿½ÃÄÑ¼­ JAZ¸¸µë.
-	 * (ÃÖ¼ÒÀÌµ¿)
+	 * ì²˜ìŒì—” Aë¡œë§Œ ì´ë£¨ì–´ì ¸ ìžˆìŠµë‹ˆë‹¤. ^ : ë‹¤ìŒì•ŒíŒŒë²³ v : ì´ì „ì•ŒíŒŒë²³ (Aì—ì„œëŠ” Zë¡œ) < : ì»¤ì„œë¥¼ ì™¼ìª½ìœ¼ë¡œ ì´ë™ > : ì»¤ì„œë¥¼
+	 * ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™ AAA ìœ„ë¡œ 9ë²ˆ : JAA ì™¼ìª½1ë²ˆ : ì»¤ì„œë¥¼ ë§¨ë’¤ë¡œ ì´ë™ ì•„ëž˜ë¡œ 1ë²ˆ: JAZ í† íƒˆ:11ë²ˆì´ë™ì‹œì¼œì„œ JAZë§Œë“¬.
+	 * (ìµœì†Œì´ë™)
 	 */
 	public static void main(String[] args) {
 		String name = "JAAAABAZ"; // 3
@@ -31,8 +31,8 @@ public class L2_Á¶ÀÌ½ºÆ½ {
 		Queue<Integer> que = new LinkedList<>();
 		que.add(0);
 		/**
-		 * 0. cur = 0¿¡ ÀÖ´Ù. 1. ÇöÀçÀ§Ä¡·ÎºÎÅÍ ¿À¸¥ÂÊÀ¸·Î °¡¾ßµÇ´ÂÁö °Ë»ç. 2. ÇöÀçÀ§Ä¡·ÎºÎÅÍ ¿ÞÂÊÀ¸·Î °¡¾ßµÇ´ÂÁö °Ë»ç. 3. ¿ÞÂÊ,
-		 * ¿À¸¥ÂÊ Áß Àû°Ô °¡´Â°÷À¸·Î curÀ» ÀÌµ¿½ÃÅ´
+		 * 0. cur = 0ì— ìžˆë‹¤. 1. í˜„ìž¬ìœ„ì¹˜ë¡œë¶€í„° ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°€ì•¼ë˜ëŠ”ì§€ ê²€ì‚¬. 2. í˜„ìž¬ìœ„ì¹˜ë¡œë¶€í„° ì™¼ìª½ìœ¼ë¡œ ê°€ì•¼ë˜ëŠ”ì§€ ê²€ì‚¬. 3. ì™¼ìª½,
+		 * ì˜¤ë¥¸ìª½ ì¤‘ ì ê²Œ ê°€ëŠ”ê³³ìœ¼ë¡œ curì„ ì´ë™ì‹œí‚´
 		 */
 		
 		Map<Integer, Integer> map = new HashMap<>();
@@ -46,7 +46,7 @@ public class L2_Á¶ÀÌ½ºÆ½ {
 					dist[i] = Math.abs(i - curidx);
 				}
 			}
-			System.out.println("dist[" + i + "]´Â " + dist[i]);
+			System.out.println("dist[" + i + "]ëŠ” " + dist[i]);
 			if(dist[i]!=0) {
 				map.put(i, dist[i]);
 			}
@@ -60,30 +60,30 @@ public class L2_Á¶ÀÌ½ºÆ½ {
 //				continue;
 //			}
 //			que.add(i);
-//			System.out.println("Å¥¿¡ " + i + " ³Ö¾úÀ½ ");
+//			System.out.println("íì— " + i + " ë„£ì—ˆìŒ ");
 //		}
 
-		int cur = 0; // ÇöÀç À§Ä¡
+		int cur = 0; // í˜„ìž¬ ìœ„ì¹˜
 		while (!que.isEmpty()) {
 
 			int idx = que.poll(); // idx = 0,7,5
 
-			// ÀÌµ¿¼ö
+			// ì´ë™ìˆ˜
 			if (Math.abs(idx - cur) > len / 2) {
 				answer += Math.abs(len - idx - cur);
 			} else {
 				answer += Math.abs(idx - cur);
 			}
 			cur = idx;
-			System.out.println(idx + " ÇöÀç ÀÌµ¿¼ö: " + answer);
+			System.out.println(idx + " í˜„ìž¬ ì´ë™ìˆ˜: " + answer);
 
-			// ¾ËÆÄºªº¯È¯¼ö
+			// ì•ŒíŒŒë²³ë³€í™˜ìˆ˜
 			int cha = name.charAt(idx) - 'A';
 			if (cha > 13) {
 				cha = 26 - cha;
 			}
 			answer += cha;
-			System.out.println(idx + " ¾ËÆÄºªº¯È¯ÇÔ : " + answer);
+			System.out.println(idx + " ì•ŒíŒŒë²³ë³€í™˜í•¨ : " + answer);
 
 		}
 

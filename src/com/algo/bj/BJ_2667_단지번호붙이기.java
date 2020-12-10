@@ -7,11 +7,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BJ_2667_´ÜÁö¹øÈ£ºÙÀÌ±â {
+public class BJ_2667_ë‹¨ì§€ë²ˆí˜¸ë¶™ì´ê¸° {
 
 	static int N;
 	static boolean[][] visit;
-	static int[] dy = { 0, -1, 0, 1 }; // ÁÂ,»ó,¿ì,ÇÏ
+	static int[] dy = { 0, -1, 0, 1 }; // ì¢Œ,ìƒ,ìš°,í•˜
 	static int[] dx = { -1, 0, 1, 0 };
 
 	public static void main(String[] args) throws Exception {
@@ -37,7 +37,7 @@ public class BJ_2667_´ÜÁö¹øÈ£ºÙÀÌ±â {
 			for (int j = 0; j < N; j++) {
 				if (!visit[i][j] && map[i][j] != 0) {
 					size=0;
-					count++; // ±ºÁı ÇÏ³ª Áõ°¡
+					count++; // êµ°ì§‘ í•˜ë‚˜ ì¦ê°€
 					que.add(new int[] { i, j });
 					while (!que.isEmpty()) {
 						int[] cur = que.poll();
@@ -60,7 +60,7 @@ public class BJ_2667_´ÜÁö¹øÈ£ºÙÀÌ±â {
 			}
 		} // end for
 
-		System.out.println("¿µ¿ªÀÇ °¹¼ö: " + count);
+		System.out.println("ì˜ì—­ì˜ ê°¯ìˆ˜: " + count);
 		
 		for(int i=0; i<N; i++) {
 			for(int j=0; j<N; j++) {

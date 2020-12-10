@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class D4_¼öÁöÀÇ¼öÁö¸Â´Â¿©Çà {
+public class D4_ìˆ˜ì§€ì˜ìˆ˜ì§€ë§ëŠ”ì—¬í–‰ {
 
 	static int T, R, C, max;
 	static char[][] map;
 	static boolean[] check = new boolean[26];
-	static int[] dy = { -1, 0, 1, 0 }; // »ó,¿ì,ÇÏ,ÁÂ
+	static int[] dy = { -1, 0, 1, 0 }; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = { 0, 1, 0, -1 };
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -27,7 +27,7 @@ public class D4_¼öÁöÀÇ¼öÁö¸Â´Â¿©Çà {
 
 			} // end Input
 			max = Integer.MIN_VALUE;
-			// (0,0)ºÎÅÍ½ÃÀÛ. ÇöÀç ¿©ÇàÁö°¹¼ö 1.
+			// (0,0)ë¶€í„°ì‹œì‘. í˜„ì¬ ì—¬í–‰ì§€ê°¯ìˆ˜ 1.
 			dfs(0, 0, 1);
 			System.out.println(max);
 		} // end Testcase
@@ -40,10 +40,10 @@ public class D4_¼öÁöÀÇ¼öÁö¸Â´Â¿©Çà {
 			max = count;
 		}
 
-		// ¹â¾Ò´Ù°í Ã¼Å©
+		// ë°Ÿì•˜ë‹¤ê³  ì²´í¬
 		check[map[y][x] - 'A'] = true;
 
-		for (int d = 0; d < 4; d++) { // ÁÖº¯ Å½»ö
+		for (int d = 0; d < 4; d++) { // ì£¼ë³€ íƒìƒ‰
 			int ny = y + dy[d];
 			int nx = x + dx[d];
 			if (!canGo(ny, nx)) continue;

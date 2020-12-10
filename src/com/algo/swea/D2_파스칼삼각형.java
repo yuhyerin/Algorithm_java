@@ -2,7 +2,7 @@ package com.algo.swea;
 
 import java.util.Scanner;
 
-public class D2_ÆÄ½ºÄ®»ï°¢Çü {
+public class D2_íŒŒìŠ¤ì¹¼ì‚¼ê°í˜• {
 	static int T,N;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

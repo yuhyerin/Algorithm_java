@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BJ_10989_¼öÁ¤·ÄÇÏ±â3 {
+public class BJ_10989_ìˆ˜ì •ë ¬í•˜ê¸°3 {
 	public static void main(String[] args)throws Exception {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

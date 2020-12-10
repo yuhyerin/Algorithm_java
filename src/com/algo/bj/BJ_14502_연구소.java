@@ -6,16 +6,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BJ_14502_¿¬±¸¼Ò {
+public class BJ_14502_ì—°êµ¬ì†Œ {
 
 	/**
-	 * º®Àº 3°³ ¼¼¿ö¾ß ÇÑ´Ù.
-	 * 0 : ºóÄ­
-	 * 1 : º®
-	 * 2 : ¹ÙÀÌ·¯½º°¡ ÀÖ´Â °÷. */
+	 * ë²½ì€ 3ê°œ ì„¸ì›Œì•¼ í•œë‹¤.
+	 * 0 : ë¹ˆì¹¸
+	 * 1 : ë²½
+	 * 2 : ë°”ì´ëŸ¬ìŠ¤ê°€ ìˆëŠ” ê³³. */
 	static int N,M;
 	static int[][] map;
-	static int[] dy = { -1, 0, 1, 0 }; // »ó,¿ì,ÇÏ,ÁÂ
+	static int[] dy = { -1, 0, 1, 0 }; // ìƒ,ìš°,í•˜,ì¢Œ
 	static int[] dx = { 0, 1, 0, -1 };
 	static int max;
 	static Queue<int[]> virus;

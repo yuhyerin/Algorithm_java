@@ -1,12 +1,12 @@
 package com.algo.programmers;
 
-public class L2_Å¸°Ù³Ñ¹ö {
+public class L2_íƒ€ê²Ÿë„˜ë²„ {
 	/**
-	 * n°³ÀÇ À½ÀÌ¾Æ´Ñ Á¤¼ö ÀÌ ¼öµéÀ» ´õÇÏ°Å³ª »©¼­, Å¸°Ù³Ñ¹ö ¸¸µé±â.
-	 * Å¸°Ù³Ñ¹ö¸¦ ¸¸µå´Â ¹æ¹ıÀÇ ¼ö¸¦ ¸®ÅÏ.
-	 * numbersÀÇ ±æÀÌ 2~20
-	 * °¢ ¼öµéÀº 1~50ÀÌÇÏÀÇ ¼ö
-	 * Å¸°Ù³Ñ¹ö´Â 1~1000ÀÌÇÏÀÇ ¼ö
+	 * nê°œì˜ ìŒì´ì•„ë‹Œ ì •ìˆ˜ ì´ ìˆ˜ë“¤ì„ ë”í•˜ê±°ë‚˜ ë¹¼ì„œ, íƒ€ê²Ÿë„˜ë²„ ë§Œë“¤ê¸°.
+	 * íƒ€ê²Ÿë„˜ë²„ë¥¼ ë§Œë“œëŠ” ë°©ë²•ì˜ ìˆ˜ë¥¼ ë¦¬í„´.
+	 * numbersì˜ ê¸¸ì´ 2~20
+	 * ê° ìˆ˜ë“¤ì€ 1~50ì´í•˜ì˜ ìˆ˜
+	 * íƒ€ê²Ÿë„˜ë²„ëŠ” 1~1000ì´í•˜ì˜ ìˆ˜
 	 */
 	public static void main(String[] args) {
 		int[] numbers = { 1, 1, 1, 1, 1 };
@@ -17,7 +17,7 @@ public class L2_Å¸°Ù³Ñ¹ö {
 
 	public static int solution(int[] numbers, int target) {
         int answer = 0;
-        int len = numbers.length; // ÁÖ¾îÁø ¼ıÀÚÀÇ °¹¼ö
+        int len = numbers.length; // ì£¼ì–´ì§„ ìˆ«ìì˜ ê°¯ìˆ˜
 		int totalnum = (int)Math.pow(2, len);
 		
 		for(int i=0; i<totalnum; i++) { // 00000, 00001, 00010, 00011, . . .

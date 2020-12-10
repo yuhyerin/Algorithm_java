@@ -6,16 +6,16 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 
-public class BJ_2573_ºù»ê {
+public class BJ_2573_ë¹™ì‚° {
 	/**
-	 * 4¹æÇâ 0ÀÌ ÀÖ´Â¼ö¸¸Å­ ÁÙ¾îµç´Ù. 
-	 * ºù»êÀÌ µÎµ¢¾î¸® ÀÌ»óÀ¸·Î ºĞ¸®µÇ´Â ÃÖÃÊÀÇ ³â(½Ã°£)Àº ??? 
-	 * ´Ù³ì¾Ò´Âµ¥µµ, µÎµ¢¾î¸® ÀÌ»óÀ¸·Î ºĞ¸®µÇÁö ¾Ê´Â´Ù¸é, 0 Ãâ·Â 
+	 * 4ë°©í–¥ 0ì´ ìˆëŠ”ìˆ˜ë§Œí¼ ì¤„ì–´ë“ ë‹¤. 
+	 * ë¹™ì‚°ì´ ë‘ë©ì–´ë¦¬ ì´ìƒìœ¼ë¡œ ë¶„ë¦¬ë˜ëŠ” ìµœì´ˆì˜ ë…„(ì‹œê°„)ì€ ??? 
+	 * ë‹¤ë…¹ì•˜ëŠ”ë°ë„, ë‘ë©ì–´ë¦¬ ì´ìƒìœ¼ë¡œ ë¶„ë¦¬ë˜ì§€ ì•ŠëŠ”ë‹¤ë©´, 0 ì¶œë ¥ 
 	 * */
-	static int N,M; //Çà, ¿­ : 3~300 
+	static int N,M; //í–‰, ì—´ : 3~300 
 	static int[][] map;
 	static int[][] checkmap;
-	static int[] dy = {-1,0,1,0}; //»ó, ¿ì, ÇÏ, ÁÂ 
+	static int[] dy = {-1,0,1,0}; //ìƒ, ìš°, í•˜, ì¢Œ 
 	static int[] dx = {0,1,0,-1};
 	public static void main(String[] args) throws Exception {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -66,9 +66,9 @@ public class BJ_2573_ºù»ê {
 		}
 		return true;
 	}
-	// µÎµ¢¾î¸®·Î ³ª´²Á³´Ï ?
+	// ë‘ë©ì–´ë¦¬ë¡œ ë‚˜ëˆ ì¡Œë‹ˆ ?
 	private static boolean isTwo(int[][] checkmap) {
-		int[] dy = {0, 1, 1, 1, 0, -1, -1, -1}; // ÁÂ, ÁÂ»ó, »ó, ¿ì»ó, ¿ì, ¿ìÇÏ, ÇÏ, ÁÂÇÏ 
+		int[] dy = {0, 1, 1, 1, 0, -1, -1, -1}; // ì¢Œ, ì¢Œìƒ, ìƒ, ìš°ìƒ, ìš°, ìš°í•˜, í•˜, ì¢Œí•˜ 
 		int[] dx = {-1, -1, 0, 1, 1, 1, 0, -1};
 		int gun = 0;
 		for(int i=0; i<N; i++) {
