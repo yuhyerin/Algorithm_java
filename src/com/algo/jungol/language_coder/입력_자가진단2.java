@@ -6,5 +6,6 @@ public class 입력_자가진단2 {
 		int num2= 100;
 		System.out.println(num1);
 		System.out.println(num2);
+		
 	}
 }
