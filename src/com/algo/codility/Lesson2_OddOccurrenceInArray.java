@@ -3,7 +3,7 @@ package com.algo.codility;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OddOccurrenceInArray {
+public class Lesson2_OddOccurrenceInArray {
 	public static void main(String[] args) {
 		int[] A = {9, 3, 9, 3, 9, 7, 9};
 		int result = solution(A);

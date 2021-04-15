@@ -1,6 +1,7 @@
 package com.algo.codility;
 
-public class binaryGap {
+public class Lesson1_BinaryGap {
+	/** 문제 차근차근 읽기 ! */
 	public static void main(String[] args) {
 		int result = solution(1041);
 		System.out.println(result);

@@ -1,6 +1,6 @@
 package com.algo.codility;
 
-public class CyclicRotation {
+public class Lesson2_CyclicRotation {
 	public static void main(String[] args) {
 		
 	}
