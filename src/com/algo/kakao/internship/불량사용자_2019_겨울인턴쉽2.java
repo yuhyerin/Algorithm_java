@@ -1,4 +1,4 @@
-package com.algo.kakao;
+package com.algo.kakao.internship;
 
 import java.util.Collections;
 import java.util.HashSet;
