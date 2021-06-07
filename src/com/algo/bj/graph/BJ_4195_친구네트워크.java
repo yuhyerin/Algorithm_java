@@ -1,8 +1,10 @@
 package com.algo.bj.graph;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -14,14 +16,16 @@ public class BJ_4195_친구네트워크 {
 	static int[] count;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringBuilder sb = new StringBuilder();
 		int T = Integer.parseInt(br.readLine()); // 테스트케이스 수 
 		for(int t=0; t<T; t++) {
 			Map<String, Integer> map = new HashMap<>();
 			int F = Integer.parseInt(br.readLine()); // 친구관계 수 (100,000)
-			parent = new int[100001];
-			count = new int[100001];
-			rank = new int[100001];
-			for(int i=1; i<=100000; i++) {
+			parent = new int[2*F+1];
+			count = new int[2*F+1];
+			rank = new int[2*F+1];
+			for(int i=1; i<=2*F; i++) {
 				parent[i]=i;
 				count[i]=1;
 				rank[i]=0;
@@ -40,12 +44,14 @@ public class BJ_4195_친구네트워크 {
 				int a = map.get(name1);
 				int b = map.get(name2);
 				if(!isSameParent(a,b)) {
-					union(a,b);
+					sb.append(union(a,b)+"\n");
 				}
 			}
-			int debug = 1;
 		}
-		
+		bw.write(sb.toString());
+		bw.flush();
+        bw.close();
+        br.close();
 	}
 	
 	private static boolean isSameParent(int a, int b) {
@@ -55,24 +61,20 @@ public class BJ_4195_친구네트워크 {
 		return false;
 	}
 
-	public static void union(int a, int b) {
+	public static int union(int a, int b) {
 		a = find(a);
 		b = find(b);
-		if(a==b) return;
 		if(rank[a]>=rank[b]) {
 			parent[b]=a;
 			count[a]= count[a]+count[b];
 			rank[a]++;
-			System.out.println(count[a]);
+			return count[a];
 		}else {
 			parent[a]=b;
 			count[b]= count[a]+count[b];
 			rank[b]++;
-			System.out.println(count[b]);
+			return count[b];
 		}
-//		for(int i = 1; i <= 4; i++)
-//			System.out.print(count[i]);
-//		System.out.println();
 	}
 	
 	public static int find(int a) {
